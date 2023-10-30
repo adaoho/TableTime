@@ -10,33 +10,24 @@ This document provides an overview of the API endpoints and their usage for our 
 
 ### 1. Available endpoints for **_CMS Admin_**
 
-- [**_POST_** /register](#1-post-register)
-- [**_POST_** /login](#1-post-register)
-- [**_POST_** /googleSignIn](#1-post-register)
-- [**_GET_** /lodgings](#1-post-register)
-- [**_POST_** /lodgings](#1-post-register)
-- [**_DELETE_** /lodgings/:id](#1-post-register)
-- [**_PATCH_** /lodgings/:id](#1-post-register)
-- [**_PUT_** /lodgings/:id](#1-post-register)
-- [**_GET_** /lodgings/:id](#1-post-register)
+- [**_POST_** /user/login](#1-post-register)
+- [**_POST_** /user/register](#1-post-register)
 
-* [**_GET_** /types](#1-post-register)
-* [**_POST_** /types](#1-post-register)
-* [**_DELETE_** /types/:id](#1-post-register)
+* [**_POST_** /cuisine/](#1-post-register)
+* [**_GET_** /cuisine/](#1-post-register)
+* [**_GET_** /cuisine/:id](#1-post-register)
+* [**_PUT_** /cuisine/:id](#1-post-register)
+* [**_DELETE_** /cuisine/:id](#1-post-register)
 
-- [**_GET_** /logs](#1-post-register)
-- [**_POST_** /logs](#1-post-register)
+- [**_POST_** /category/](#1-post-register)
+- [**_GET_** /category/](#1-post-register)
+- [**_PUT_** /category/:id](#1-post-register)
+- [**_DELETE_** /category/:id](#1-post-register)
 
 ### 2. Available endpoints for **_Public_**
 
-- [**_POST_** /public/register](#1-post-register)
-- [**_POST_** /public/login](#1-post-register)
-- [**_POST_** /public/googleLogin](#1-post-register)
-
-* [**_GET_** /public/lodgings](#1-post-register)
-
-- [**_POST_** /public/bookmark](#1-post-register)
-- [**_POST_** /public/bookmark/:id](#1-post-register)
+- [**_GET_** /pub/](#1-post-register)
+- [**_GET_** /pub/:id](#1-post-register)
 
 &nbsp;
 
@@ -48,8 +39,11 @@ This document provides an overview of the API endpoints and their usage for our 
 
 ```json
 {
+  "username": "string",
   "email": "string",
-  "password": "string"
+  "password": "string",
+  "phoneNumber": "string",
+  "address": "string"
 }
 ```
 

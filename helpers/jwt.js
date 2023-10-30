@@ -1,5 +1,5 @@
 const { sign, verify } = require("jsonwebtoken");
-const SECRET = "SECRET";
+const SECRET = process.env.SECRET;
 
 const createToken = (payload) => {
   return sign(payload, SECRET);

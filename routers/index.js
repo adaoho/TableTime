@@ -5,14 +5,11 @@ const categoryRouter = require("./categoryRouter");
 const publicRouter = require("./publicRouter");
 const authentication = require("../middlewares/authentication");
 
-// router.use(authentication)
-
-// Dashboard Admin -- Authentication
 router.use("/user", userRouter);
+router.use("/pub", publicRouter);
+
+router.use(authentication);
 router.use("/cuisine", cuisineRouter);
 router.use("/category", categoryRouter);
-
-// Ini untuk Public
-router.use("/pub", publicRouter);
 
 module.exports = router;

@@ -34,7 +34,7 @@ class UserStatic {
       if (!email) throw { name: `EmailEmpty` };
       if (!password) throw { name: `PasswordEmpty` };
 
-      const findUser = await User.findOne({ where: email });
+      const findUser = await User.findOne({ where: { email } });
 
       if (!findUser) throw { name: "InvalidLogin" };
 
@@ -46,6 +46,11 @@ class UserStatic {
         id: findUser.id,
         email: findUser.email,
         role: findUser.role,
+      });
+
+      res.status(200).json({
+        name: findUser.username,
+        access_token,
       });
     } catch (error) {
       next(error);
