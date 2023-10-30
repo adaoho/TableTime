@@ -1,0 +1,18 @@
+[
+  {
+    "username": "Nugroho Adnan",
+    "email": "adaoho@mail.com",
+    "password": "12345678",
+    "role": "admin",
+    "phoneNumber": "0217407080",
+    "address": "South Tangerang Pamulang 2"
+  },
+  {
+    "username": "Adnan Nugroho",
+    "email": "ohoada@mail.com",
+    "password": "12345678",
+    "role": "admin",
+    "phoneNumber": "0217407080",
+    "address": "South Tangerang Pamulang 2"
+  }
+]
