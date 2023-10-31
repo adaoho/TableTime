@@ -35,8 +35,12 @@ function errorHandler(err, req, res, next) {
       message = "Invalid Token";
       break;
     case "unauthenticated":
-      status = 403;
+      status = 401;
       message = "You're Not Authenticated";
+      break;
+    case "InvalidRole":
+      status = 403;
+      message = "You're Not Authorized";
       break;
 
     default:

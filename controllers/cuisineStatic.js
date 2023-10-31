@@ -76,6 +76,24 @@ class CuisineStatic {
     }
   }
 
+  static async updateImageUrl(req, res, next) {
+    try {
+      const authorId = req.user.id;
+      const { id } = req.params;
+      const { name, description, price, imageUrl, categoryId } = req.body;
+
+      const findCuisine = await Cuisine.findOne({ where: { id } });
+      if (!findCuisine) throw { name: "NotFound" };
+
+      const editCuisine = await Cuisine.update(
+        { name, description, price, imageUrl, categoryId, authorId },
+        { where: { id } }
+      );
+    } catch (error) {
+      next(error);
+    }
+  }
+
   static async deleteCuisine(req, res, next) {
     try {
       const { id } = req.params;

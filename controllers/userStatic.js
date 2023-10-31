@@ -3,7 +3,7 @@ const { createToken } = require("../helpers/jwt");
 const { User } = require("../models");
 
 class UserStatic {
-  static async userRegister(req, res, next) {
+  static async addUser(req, res, next) {
     try {
       const { username, email, password, phoneNumber, address } = req.body;
 
@@ -19,8 +19,17 @@ class UserStatic {
         role: "staff",
       });
 
+      const newUser = await User.findOne({
+        attributes: {
+          exclude: ["password", "phoneNumber", "createdAt", "updatedAt"],
+        },
+        where: { email },
+      });
+
+      console.log(newUser);
+
       res.status(201).json({
-        message: `${email} registered successfully`,
+        newUser,
       });
     } catch (error) {
       next(error);
@@ -49,7 +58,6 @@ class UserStatic {
       });
 
       res.status(200).json({
-        name: findUser.username,
         access_token,
       });
     } catch (error) {

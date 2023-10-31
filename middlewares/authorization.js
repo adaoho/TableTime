@@ -1,6 +1,6 @@
-const { Cuisine } = require("../models");
+const { Cuisine, User } = require("../models");
 
-async function authorization(req, res, next) {
+async function authorizationCuisine(req, res, next) {
   const { id, role } = req.user;
   const idCuisine = req.params.id;
 
@@ -8,7 +8,7 @@ async function authorization(req, res, next) {
     const findCuisine = await Cuisine.findOne({ where: { id: idCuisine } });
 
     if (!findCuisine) {
-      throw { name: `InvalidId` };
+      throw { name: `NotFound` };
     } else {
       if (findCuisine.authorId === id) {
         next();
@@ -25,4 +25,24 @@ async function authorization(req, res, next) {
   }
 }
 
-module.exports = authorization;
+async function authorizationUser(req, res, next) {
+  try {
+    const { id, role } = req.user;
+
+    const findUser = await User.findByPk(id);
+
+    if (!findUser) {
+      throw { name: `InvalidId` };
+    } else {
+      if (role === "admin") {
+        next();
+      } else {
+        throw { name: `InvalidRole` };
+      }
+    }
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = { authorizationCuisine, authorizationUser };

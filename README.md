@@ -4,13 +4,13 @@
 
 > Tuliskan API Docs kamu di sini -->
 
-# API Documentation - Table Time API
+# Table Time API Documentation
 
 This document provides an overview of the API endpoints and their usage for our service.
 
 ### 1. Available endpoints for **_CMS Admin_**
 
-- [**_POST_** /user/register](#1-post-userregister)
+- [**_POST_** /user/add-user](#1-post-add-user)
 - [**_POST_** /user/login](#2-post-userlogin)
 
 * [**_POST_** /cuisine/](#3-post-cuisine)
@@ -37,7 +37,7 @@ This document provides an overview of the API endpoints and their usage for our 
 
 <!-- ## 1. POST /user/register -->
 
-## 1. POST /user/register
+## 1. POST /add-user
 
 This is where user with default role staff can create an account
 
@@ -62,8 +62,13 @@ _Response (201 - Created)_
 
 ```json
 {
-  "id": 3,
-  "email": "adaoho@mail.com"
+  "newUser": {
+    "id": 6,
+    "username": "Jeremy",
+    "email": "jeremy@mail.com",
+    "role": "staff",
+    "address": "Kabupaten Tangerang"
+  }
 }
 ```
 
@@ -88,6 +93,22 @@ OR
 OR
 {
   "message": "Password is required"
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "You're Not Authenticated"
+}
+```
+
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You're Not Authorized"
 }
 ```
 
@@ -117,7 +138,6 @@ _Response (200 - OK)_
 
 ```json
 {
-  "name": "Nugroho Adnan",
   "access_token": "eyJhbGciOi......"
 }
 ```
@@ -180,7 +200,7 @@ _Response (201 - Created)_
     "name": "Waffle Cone",
     "description": "Fried Chicken in Cone",
     "price": 28000,
-    "imgUrl": "https://img.sndimg.com/.....",
+    "imgUrl": "https://img.sndimg.com/....",
     "categoryId": 1,
     "authorId": 1,
     "updatedAt": "2023-10-31T01:58:44.765Z",
@@ -218,7 +238,7 @@ OR
 
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -279,7 +299,7 @@ _Response (200 - OK)_
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -342,7 +362,7 @@ _Response (400 - Bad Request)_
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -441,11 +461,19 @@ OR
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
   "message": "You're Not Authenticated"
+}
+```
+
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You're Not Authorized"
 }
 ```
 
@@ -494,11 +522,19 @@ _Response (400 - Bad Request)_
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
   "message": "You're Not Authenticated"
+}
+```
+
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You're Not Authorized"
 }
 ```
 
@@ -545,7 +581,7 @@ _Response (200 - OK)_
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -603,7 +639,7 @@ _Response (400 - Bad Request)_
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -673,7 +709,7 @@ OR
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -726,7 +762,7 @@ _Response (400 - Bad Request)_
 }
 ```
 
-_Response (403 - Forbidden)_
+_Response (401 - Unauthorized)_
 
 ```json
 {
@@ -740,7 +776,7 @@ _Response (403 - Forbidden)_
 
 ---
 
-> With Prefix **/pub** any user without authentication can access this endpoint.
+> With Prefix **/pub** any user without authentication can access this endpoint below.
 
 ---
 
