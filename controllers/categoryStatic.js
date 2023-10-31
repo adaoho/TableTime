@@ -3,10 +3,10 @@ const { Category } = require("../models");
 class CategoryStatic {
   static async getCategory(req, res, next) {
     try {
-      const allCategory = await Category.findAll();
+      const getCategory = await Category.findAll();
 
-      rest.status(200).json({
-        message: `Success get all category`,
+      res.status(200).json({
+        getCategory,
       });
     } catch (error) {
       next(error);
@@ -17,12 +17,14 @@ class CategoryStatic {
     try {
       const { name } = req.body;
 
+      if (!name) throw { name: "NameEmpty" };
+
       const addCategory = await Category.create({
         name,
       });
 
       res.status(201).json({
-        message: `Data with ${name} success registered`,
+        addCategory,
       });
     } catch (error) {
       next(error);
@@ -34,16 +36,20 @@ class CategoryStatic {
       const { id } = req.params;
       const { name } = req.body;
 
+      if (!name) throw { name: "NameEmpty" };
+
       const findCategory = await Category.findByPk(id);
       if (!findCategory) throw { name: "NotFound" };
 
-      const updateCategory = await Category.update(
+      const editCategory = await Category.update(
         { name: name },
         { where: { id } }
       );
 
+      const updatedCategory = await Category.findByPk(id);
+
       res.status(200).json({
-        message: `Data with Id ${id} Success Update`,
+        updatedCategory,
       });
     } catch (error) {
       next(error);
@@ -54,12 +60,15 @@ class CategoryStatic {
     try {
       const { id } = req.params;
 
+      const findCategory = await Category.findByPk(id);
+      if (!findCategory) throw { name: "NotFound" };
+
       const delCategory = await Category.destroy({
         where: { id },
       });
 
       res.status(200).json({
-        message: `Data with Id ${id} success deleted`,
+        message: `${findCategory.name} success to delete`,
       });
     } catch (error) {
       next(error);

@@ -3,20 +3,20 @@ const { Cuisine } = require("../models");
 class CuisineStatic {
   static async postCuisine(req, res, next) {
     try {
-      const authorId = req.user.id;
+      const { id } = req.user;
       const { name, description, price, imgUrl, categoryId } = req.body;
 
-      const createCuisine = await Cuisine.create({
+      const newCuisine = await Cuisine.create({
         name,
         description,
         price,
         imgUrl,
         categoryId,
-        authordId,
+        authorId: id,
       });
 
       res.status(201).json({
-        message: `${name} is added successfully!`,
+        newCuisine,
       });
     } catch (error) {
       next(error);
@@ -28,7 +28,7 @@ class CuisineStatic {
       const getCuisine = await Cuisine.findAll();
 
       res.status(200).json({
-        message: `Get All Data Cuisine Success`,
+        getCuisine,
       });
     } catch (error) {
       next(error);
@@ -39,12 +39,12 @@ class CuisineStatic {
     try {
       const { id } = req.params;
 
-      const detailCuisine = await Cuisine.findByPk(id);
+      const findCuisine = await Cuisine.findByPk(id);
 
-      if (!detailCuisine) throw { name: "NotFound" };
+      if (!findCuisine) throw { name: "NotFound" };
 
       res.status(200).json({
-        message: `Get Data from id from ${id} Success`,
+        findCuisine,
       });
     } catch (error) {
       next(error);
@@ -60,13 +60,16 @@ class CuisineStatic {
       const findCuisine = await Cuisine.findOne({ where: { id } });
       if (!findCuisine) throw { name: "NotFound" };
 
-      const updateCuisine = await Cuisine.update(
-        { name, description, price, imageUrl, categoryId },
+      const editCuisine = await Cuisine.update(
+        { name, description, price, imageUrl, categoryId, authorId },
         { where: { id } }
       );
 
+      console.log(editCuisine);
+      const updatedCuisine = await Cuisine.findByPk(id);
+
       res.status(201).json({
-        message: `Data ${name} updated successfully`,
+        updatedCuisine,
       });
     } catch (error) {
       next(error);
@@ -76,10 +79,14 @@ class CuisineStatic {
   static async deleteCuisine(req, res, next) {
     try {
       const { id } = req.params;
+      const findCuisine = await Cuisine.findOne({ where: { id } });
+
+      if (!findCuisine) throw { name: "NotFound" };
+
       const deleteCuisine = await Cuisine.destroy({ where: { id } });
 
       res.status(200).json({
-        message: `Delete data with Id ${id} Success Delete`,
+        message: `${findCuisine.name} success to delete`,
       });
     } catch (error) {
       next(error);
