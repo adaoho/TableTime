@@ -14,6 +14,10 @@ function errorHandler(err, req, res, next) {
       status = 400;
       message = "Error Data Not Found";
       break;
+    case "imageEmpty":
+      status = 400;
+      message = "Image can't be Empty";
+      break;
     case "PasswordEmpty":
       status = 400;
       message = "Password Can't be Empty";
@@ -34,6 +38,10 @@ function errorHandler(err, req, res, next) {
       status = 401;
       message = "Invalid Token";
       break;
+    case "invalidId":
+      status = 401;
+      message = "ID not Found";
+      break;
     case "unauthenticated":
       status = 401;
       message = "You're Not Authenticated";
@@ -41,6 +49,10 @@ function errorHandler(err, req, res, next) {
     case "InvalidRole":
       status = 403;
       message = "You're Not Authorized";
+      break;
+    case "InvalidData":
+      status = 404;
+      message = "Error data not found";
       break;
 
     default:

@@ -5,8 +5,16 @@ class PublicStatic {
   static async getCuisinePublic(req, res, next) {
     try {
       let option = {
-        order: ["id", "ASC"],
-        include: Category,
+        // order: ["id", "ASC"],
+        include: {
+          model: Category,
+          attributes: {
+            exclude: ["createdAt", "updatedAt"],
+          },
+        },
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
       };
 
       let limit = 10;
@@ -24,18 +32,18 @@ class PublicStatic {
 
       if (page) {
         option.limit = limit;
-        option.offer = page * limit - limit;
+        option.offset = page * limit - limit;
       } else {
         option.offset = 0;
         option.limit = limit;
       }
 
-      const { row, count } = await Cuisine.findAndCountAll(option);
+      const { rows, count } = await Cuisine.findAndCountAll(option);
 
       res.status(200).json({
         currentPage: page || 1,
         totalPage: Math.ceil(count / limit),
-        getCuisine: row,
+        getCuisine: rows,
       });
     } catch (error) {
       next(error);

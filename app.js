@@ -17,3 +17,5 @@ app.use(errorHandler);
 app.listen(port, () => {
   console.log(`Let's Go Sailing On Port ${port}`);
 });
+
+module.exports = app;

@@ -1,17 +1,22 @@
 const { verifyToken } = require("../helpers/jwt");
+const { User } = require("../models");
 
 async function authentication(req, res, next) {
   try {
-    const { access_token } = req.headers;
+    const bearerToken = req.headers.authorization;
 
-    if (!access_token) throw { name: "unauthenticated" };
+    if (!bearerToken) throw { name: "unauthenticated" };
+    const access_token = bearerToken.split(" ")[1];
 
     const decoded = verifyToken(access_token);
+    const user = await User.findByPk(decoded.id);
+
+    if (!user) throw { name: "invalidId" };
 
     req.user = {
-      id: decoded.id,
-      email: decoded.email,
-      role: decoded.role,
+      id: user.id,
+      email: user.email,
+      role: user.role,
     };
 
     next();

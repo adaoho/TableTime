@@ -1,4 +1,6 @@
+const axios = require("axios");
 const { Cuisine } = require("../models");
+const imagekit = require("../api/imageKit");
 
 class CuisineStatic {
   static async postCuisine(req, res, next) {
@@ -78,18 +80,26 @@ class CuisineStatic {
 
   static async updateImageUrl(req, res, next) {
     try {
-      const authorId = req.user.id;
       const { id } = req.params;
-      const { name, description, price, imageUrl, categoryId } = req.body;
 
-      const findCuisine = await Cuisine.findOne({ where: { id } });
-      if (!findCuisine) throw { name: "NotFound" };
+      const findCuisine = await Cuisine.findByPk(id);
+      if (!findCuisine) throw { name: "InvalidData" };
 
-      const editCuisine = await Cuisine.update(
-        { name, description, price, imageUrl, categoryId, authorId },
-        { where: { id } }
-      );
+      if (!req.file) throw { name: "imageEmpty" };
+      const fileData = req.file.buffer.toString("base64");
+
+      const response = await imagekit.upload({
+        file: fileData,
+        fileName: req.file.originalname,
+      });
+
+      await Cuisine.update({ imgUrl: response.url }, { where: { id } });
+
+      res.status(200).json({
+        message: `Image ${findCuisine.name} success to update`,
+      });
     } catch (error) {
+      console.log(error.name);
       next(error);
     }
   }
