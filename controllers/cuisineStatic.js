@@ -1,6 +1,7 @@
 const axios = require("axios");
 const { Cuisine } = require("../models");
-const imagekit = require("../api/imageKit");
+const instance = require("../api/imageUpload");
+const FormData = require("form-data");
 
 class CuisineStatic {
   static async postCuisine(req, res, next) {
@@ -88,18 +89,28 @@ class CuisineStatic {
       if (!req.file) throw { name: "imageEmpty" };
       const fileData = req.file.buffer.toString("base64");
 
-      const response = await imagekit.upload({
-        file: fileData,
-        fileName: req.file.originalname,
-      });
+      const form = new FormData();
+      form.append("file", fileData);
+      form.append("fileName", req.file.originalname);
 
-      await Cuisine.update({ imgUrl: response.url }, { where: { id } });
+      const response = await instance.post("/files/upload", form);
 
-      res.status(200).json({
-        message: `Image ${findCuisine.name} success to update`,
-      });
+      console.log(response.data);
+
+      // console.log(form); // this is become an array
+      // const response = await imagekit.upload({
+      //   file: fileData,
+      //   fileName: req.file.originalname,
+      // });
+
+      // console.log(req.file);
+
+      // await Cuisine.update({ imgUrl: response.url }, { where: { id } });
+
+      // res.status(200).json({
+      //   message: `Image ${findCuisine.name} success to update`,
+      // });
     } catch (error) {
-      console.log(error.name);
       next(error);
     }
   }
