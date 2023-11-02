@@ -1,0 +1,4 @@
+const app = require("../app");
+const port = 3000;
+
+app.listen(port, (_) => console.log(`The Port is sailing on ${port}`));

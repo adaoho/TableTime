@@ -26,7 +26,7 @@ class UserStatic {
         where: { email },
       });
 
-      console.log(newUser);
+      // console.log(newUser);
 
       res.status(201).json({
         newUser,

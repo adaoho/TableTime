@@ -86,30 +86,22 @@ class CuisineStatic {
       const findCuisine = await Cuisine.findByPk(id);
       if (!findCuisine) throw { name: "InvalidData" };
 
-      if (!req.file) throw { name: "imageEmpty" };
       const fileData = req.file.buffer.toString("base64");
 
       const form = new FormData();
       form.append("file", fileData);
       form.append("fileName", req.file.originalname);
+      // console.log(form);
 
       const response = await instance.post("/files/upload", form);
 
-      console.log(response.data);
+      // console.log(response.data);
 
-      // console.log(form); // this is become an array
-      // const response = await imagekit.upload({
-      //   file: fileData,
-      //   fileName: req.file.originalname,
-      // });
+      await Cuisine.update({ imgUrl: response.url }, { where: { id } });
 
-      // console.log(req.file);
-
-      // await Cuisine.update({ imgUrl: response.url }, { where: { id } });
-
-      // res.status(200).json({
-      //   message: `Image ${findCuisine.name} success to update`,
-      // });
+      res.status(200).json({
+        message: `Image ${findCuisine.name} success to update`,
+      });
     } catch (error) {
       next(error);
     }

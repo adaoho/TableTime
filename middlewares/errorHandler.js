@@ -3,7 +3,7 @@ function errorHandler(err, req, res, next) {
   let status = 500;
   let message = "Internal Server Error";
 
-  console.log(err);
+  console.log(err, "<<< from errorHandler");
 
   switch (err.name) {
     case "SequelizeValidationError":
@@ -53,6 +53,10 @@ function errorHandler(err, req, res, next) {
     case "InvalidData":
       status = 404;
       message = "Error data not found";
+      break;
+    case "SequelizeUniqueConstraintError":
+      status = 400;
+      message = "Email already registered!";
       break;
 
     default:

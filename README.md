@@ -17,12 +17,13 @@ This document provides an overview of the API endpoints and their usage for our 
 * [**_GET_** /cuisine/](#4-get-cuisine)
 * [**_GET_** /cuisine/:id](#5-get-cuisineid)
 * [**_PUT_** /cuisine/:id](#6-put-cuisineid)
-* [**_DELETE_** /cuisine/:id](#7-delete-cuisineid)
+* [**_PATCH_** /cuisine/:id](#7-patch-cuisineid)
+* [**_DELETE_** /cuisine/:id](#8-delete-cuisineid)
 
 - [**_GET_** /category/](#8-get-category)
-- [**_POST_** /category/](#9-post-category)
-- [**_PUT_** /category/:id](#10-put-categoryid)
-- [**_DELETE_** /category/:id](#11-delete-categoryid)
+- [**_POST_** /category/](#10-post-category)
+- [**_PUT_** /category/:id](#11-put-categoryid)
+- [**_DELETE_** /category/:id](#12-delete-categoryid)
 
 ### 2. Available endpoints for **_Public Site_**
 
@@ -481,9 +482,82 @@ _Response (403 - Forbidden)_
 
 </details>
 
-<!-- ## 7. DELETE /cuisine/:id -->
+<!-- ## 7. PATCH /cuisine/:id -->
 
-## 7. DELETE /cuisine/:id
+## 7. PATCH /cuisine/:id
+
+#### Request - Body
+
+```json
+{
+  "imageUrl": "file"
+}
+```
+
+#### Request - Headers
+
+```json
+{
+  "access_token": "string"
+}
+```
+
+#### Request - Params
+
+```json
+{
+  "id": "integer (required)"
+}
+```
+
+<details>
+<summary>
+Click here for Response
+</summary>
+
+_Response (200 - OK)_
+
+```json
+{
+  "message": "Image <entitiy_name> success to update"
+}
+```
+
+_Response (400 - Bad Request)_
+
+```json
+{
+  "message": "Error Data Not Found"
+}
+OR
+{
+  "message": "Image URL can't be Empty"
+}
+```
+
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "You're Not Authenticated"
+}
+```
+
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You're Not Authorized"
+}
+```
+
+&nbsp;
+
+</details>
+
+<!-- ## 8. DELETE /cuisine/:id -->
+
+## 8. DELETE /cuisine/:id
 
 #### Request - Headers
 
@@ -542,9 +616,9 @@ _Response (403 - Forbidden)_
 
 </details>
 
-<!-- ## 8. GET /category/ -->
+<!-- ## 9. GET /category/ -->
 
-## 8. GET /category/
+## 9. GET /category/
 
 #### Request - Headers
 
@@ -593,9 +667,9 @@ _Response (401 - Unauthorized)_
 
 </details>
 
-<!-- ## 9. POST /category/ -->
+<!-- ## 10. POST /category/ -->
 
-## 9. POST /category/
+## 10. POST /category/
 
 #### Request - Body
 
@@ -651,9 +725,9 @@ _Response (401 - Unauthorized)_
 
 </details>
 
-<!-- ## 10. PUT /category/:id -->
+<!-- ## 11. PUT /category/:id -->
 
-## 10. PUT /category/:id
+## 11. PUT /category/:id
 
 #### Request - Body
 
@@ -721,9 +795,9 @@ _Response (401 - Unauthorized)_
 
 </details>
 
-<!-- ## 11. DELETE /category/:id -->
+<!-- ## 12. DELETE /category/:id -->
 
-## 11. DELETE /category/:id
+## 12. DELETE /category/:id
 
 #### Request - Headers
 

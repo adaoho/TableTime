@@ -9,14 +9,14 @@
   "test": {
     "username": "postgres",
     "password": "1234",
-    "database": "TableTime_db",
+    "database": "TableTime_test",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
+    "database": "TableTime_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
