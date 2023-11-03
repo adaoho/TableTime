@@ -97,34 +97,58 @@ describe("User Router Test", () => {
   });
 
   // POST USER ADD USER
-  describe.only("POST /user/add-user", () => {
+  describe("POST /user/add-user", () => {
     describe("succeed", () => {
-      it("200 - should return access_token", async () => {
-        const bodyAdduser = { username, email, password, phoneNumber, address };
+      it("201 - should return object with newUser", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adnan@mail.com",
+          password: "12345678",
+          phoneNumber: "",
+          address: "",
+        };
         const response = await request(app)
           .post("/user/add-user")
-          .send(bodyLogin)
+          .send(bodyAdduser)
           .set("authorization", `Bearer ${access_token}`);
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(201);
         expect(response.body).toBeInstanceOf(Object);
         expect(response.body).toHaveProperty("newUser", expect.any(Object));
       });
     });
 
     describe("failed", () => {
-      it("400 - should return error email empty", async () => {
-        const bodyLogin = { email: "", password: "12345678" };
-        const response = await request(app).post("/user/login").send(bodyLogin);
+      it("400 - should return error with email null", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "",
+          password: "12345678",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token}`);
 
         expect(response.status).toBe(400);
         expect(response.body).toBeInstanceOf(Object);
         expect(response.body).toHaveProperty("message", "Email Can't be Empty");
       });
 
-      it("400 - should return error password empty", async () => {
-        const bodyLogin = { email: "adaoho@mail.com", password: "" };
-        const response = await request(app).post("/user/login").send(bodyLogin);
+      it("400 - should return error with password null", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adnan@mail.com",
+          password: "",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token}`);
 
         expect(response.status).toBe(400);
         expect(response.body).toBeInstanceOf(Object);
@@ -134,28 +158,99 @@ describe("User Router Test", () => {
         );
       });
 
-      it("400 - should return error if invalid email", async () => {
-        const bodyLogin = { email: "oho@mail.com", password: "12345678" };
-        const response = await request(app).post("/user/login").send(bodyLogin);
+      it("400 - should return error with email required", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: " ",
+          password: "12345678",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token}`);
+
+        expect(response.status).toBe(400);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty("message", "Email is Required");
+      });
+
+      it("400 - should return error with password required", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adnan@mail.com",
+          password: " ",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token}`);
+
+        expect(response.status).toBe(400);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty("message", "Password is Required");
+      });
+
+      it("400 - should return error with Email Already Registered", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adaoho@mail.com",
+          password: "12345678",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token}`);
 
         expect(response.status).toBe(400);
         expect(response.body).toBeInstanceOf(Object);
         expect(response.body).toHaveProperty(
           "message",
-          "Invalid email/password"
+          "Email already registered!"
         );
       });
 
-      it("400 - should return error if invalid password", async () => {
-        const bodyLogin = { email: "adaoho@mail.com", password: "1234567" };
-        const response = await request(app).post("/user/login").send(bodyLogin);
+      it("401 - should return error with access_token is required", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adaoho@mail.com",
+          password: "12345678",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser);
 
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
         expect(response.body).toBeInstanceOf(Object);
         expect(response.body).toHaveProperty(
           "message",
-          "Invalid email/password"
+          "You're Not Authenticated"
         );
+      });
+
+      it("401 - should return error with access_token is required", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adaoho@mail.com",
+          password: "12345678",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token + "a"}`);
+
+        expect(response.status).toBe(401);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty("message", "Invalid Token");
       });
     });
   });
