@@ -486,7 +486,7 @@ _Response (403 - Forbidden)_
 
 ## 7. PATCH /cuisine/:id
 
-#### Request - Body
+#### Request - File
 
 ```json
 {

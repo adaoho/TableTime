@@ -86,6 +86,8 @@ class CuisineStatic {
       const findCuisine = await Cuisine.findByPk(id);
       if (!findCuisine) throw { name: "InvalidData" };
 
+      if (!req.file) throw { name: "imageEmpty" };
+
       const fileData = req.file.buffer.toString("base64");
 
       const form = new FormData();
@@ -93,11 +95,14 @@ class CuisineStatic {
       form.append("fileName", req.file.originalname);
       // console.log(form);
 
-      const response = await instance.post("/files/upload", form);
+      const { data } = await instance.post("/files/upload", form);
 
-      // console.log(response.data);
+      const updateImage = await Cuisine.update(
+        { imgUrl: data.url },
+        { where: { id } }
+      );
 
-      await Cuisine.update({ imgUrl: response.url }, { where: { id } });
+      if (updateImage.length === 0) throw { name: "NotFound" };
 
       res.status(200).json({
         message: `Image ${findCuisine.name} success to update`,

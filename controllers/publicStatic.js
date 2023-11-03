@@ -5,7 +5,6 @@ class PublicStatic {
   static async getCuisinePublic(req, res, next) {
     try {
       let option = {
-        // order: ["id", "ASC"],
         include: {
           model: Category,
           attributes: {
@@ -18,15 +17,23 @@ class PublicStatic {
       };
 
       let limit = 10;
-      const { name, page, category } = req.query;
+      const { name, page, category, sort } = req.query;
 
-      if (name || category) {
+      if (name || category || sort) {
         option.where = {};
         if (name) {
           option.where.name = { [Op.iLike]: `%${name}%` };
         }
         if (category) {
-          option.where.categoryId = { [Op.eq]: category };
+          let splitCategory = category.split(",");
+          option.where.categoryId = { [Op.or]: splitCategory };
+        }
+        if (sort) {
+          if (sort.charAt(0) !== "-") {
+            option.order = [[sort, "ASC"]];
+          } else {
+            option.order = [[sort.slice(1), "DESC"]];
+          }
         }
       }
 
@@ -42,6 +49,7 @@ class PublicStatic {
 
       res.status(200).json({
         currentPage: page || 1,
+        totalData: count,
         totalPage: Math.ceil(count / limit),
         getCuisine: rows,
       });

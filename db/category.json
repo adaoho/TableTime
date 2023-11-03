@@ -1,7 +1,7 @@
 [
-  { "id": 1, "name": "Burgers" },
-  { "id": 2, "name": "Pizza" },
-  { "id": 3, "name": "Sushi" },
-  { "id": 4, "name": "Mexican" },
-  { "id": 5, "name": "Italian" }
+  { "name": "Burgers" },
+  { "name": "Pizza" },
+  { "name": "Sushi" },
+  { "name": "Mexican" },
+  { "name": "Italian" }
 ]

@@ -3,20 +3,16 @@ function errorHandler(err, req, res, next) {
   let status = 500;
   let message = "Internal Server Error";
 
-  console.log(err, "<<< from errorHandler");
+  // console.log(err, "<<< from errorHandler");
 
   switch (err.name) {
     case "SequelizeValidationError":
       status = 400;
       message = err.errors[0].message;
       break;
-    case "NotFound":
-      status = 400;
-      message = "Error Data Not Found";
-      break;
     case "imageEmpty":
       status = 400;
-      message = "Image can't be Empty";
+      message = "ImageUrl can't be Empty";
       break;
     case "PasswordEmpty":
       status = 400;
@@ -26,12 +22,16 @@ function errorHandler(err, req, res, next) {
       status = 400;
       message = "Email Can't be Empty";
       break;
+    case "SequelizeUniqueConstraintError":
+      status = 400;
+      message = "Email already registered!";
+      break;
     case "NameEmpty":
       status = 400;
       message = "Name Can't be Empty";
       break;
     case "InvalidLogin":
-      status = 400;
+      status = 401;
       message = "Invalid email/password";
       break;
     case "JsonWebTokenError":
@@ -54,9 +54,9 @@ function errorHandler(err, req, res, next) {
       status = 404;
       message = "Error data not found";
       break;
-    case "SequelizeUniqueConstraintError":
-      status = 400;
-      message = "Email already registered!";
+    case "NotFound":
+      status = 404;
+      message = "Error Data Not Found";
       break;
 
     default:

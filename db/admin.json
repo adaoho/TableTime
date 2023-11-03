@@ -14,5 +14,13 @@
     "role": "admin",
     "phoneNumber": "0217407080",
     "address": "South Tangerang Pamulang 2"
+  },
+  {
+    "username": "Oho Uhu Jakarta",
+    "email": "ohouhu@mail.com",
+    "password": "12345678",
+    "role": "staff",
+    "phoneNumber": "0217407080",
+    "address": "South Tangerang Pamulang 2"
   }
 ]

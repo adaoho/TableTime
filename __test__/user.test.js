@@ -19,7 +19,6 @@ beforeAll(async () => {
     element.password = hashPassword(element.password);
     element.createdAt = element.updatedAt = new Date();
   });
-
   await queryInterface.bulkInsert("Users", adminData, {});
 });
 
@@ -70,11 +69,11 @@ describe("User Router Test", () => {
         );
       });
 
-      it("400 - should return error if invalid email", async () => {
+      it("401 - should return error if invalid email", async () => {
         const bodyLogin = { email: "oho@mail.com", password: "12345678" };
         const response = await request(app).post("/user/login").send(bodyLogin);
 
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
         expect(response.body).toBeInstanceOf(Object);
         expect(response.body).toHaveProperty(
           "message",
@@ -82,11 +81,11 @@ describe("User Router Test", () => {
         );
       });
 
-      it("400 - should return error if invalid password", async () => {
+      it("401 - should return error if invalid password", async () => {
         const bodyLogin = { email: "adaoho@mail.com", password: "1234567" };
         const response = await request(app).post("/user/login").send(bodyLogin);
 
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
         expect(response.body).toBeInstanceOf(Object);
         expect(response.body).toHaveProperty(
           "message",
@@ -111,6 +110,8 @@ describe("User Router Test", () => {
           .post("/user/add-user")
           .send(bodyAdduser)
           .set("authorization", `Bearer ${access_token}`);
+
+        console.log(response.text);
 
         expect(response.status).toBe(201);
         expect(response.body).toBeInstanceOf(Object);
@@ -194,6 +195,24 @@ describe("User Router Test", () => {
         expect(response.body).toHaveProperty("message", "Password is Required");
       });
 
+      it("400 - should return error with invalid email format", async () => {
+        const bodyAdduser = {
+          username: "Adnan Nugroho",
+          email: "adnanmail.com",
+          password: " ",
+          phoneNumber: "",
+          address: "",
+        };
+        const response = await request(app)
+          .post("/user/add-user")
+          .send(bodyAdduser)
+          .set("authorization", `Bearer ${access_token}`);
+
+        expect(response.status).toBe(400);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty("message", "Invalid Email Format");
+      });
+
       it("400 - should return error with Email Already Registered", async () => {
         const bodyAdduser = {
           username: "Adnan Nugroho",
@@ -235,7 +254,7 @@ describe("User Router Test", () => {
         );
       });
 
-      it("401 - should return error with access_token is required", async () => {
+      it("401 - should return error with false access_token", async () => {
         const bodyAdduser = {
           username: "Adnan Nugroho",
           email: "adaoho@mail.com",

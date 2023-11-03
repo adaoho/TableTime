@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Pizza",
+    "description": "Delicious and cheesy pizza with your favorite toppings.",
+    "price": 15000,
+    "imgUrl": "https://example.com/pizza.jpg",
+    "categoryId": 3,
+    "authorId": 1
+  },
+  {
+    "name": "Burger",
+    "description": "Juicy burger with a side of crispy fries.",
+    "price": 12000,
+    "imgUrl": "https://example.com/burger.jpg",
+    "categoryId": 4,
+    "authorId": 2
+  },
+  {
+    "name": "Sushi",
+    "description": "Fresh and flavorful sushi rolls.",
+    "price": 18000,
+    "imgUrl": "https://example.com/sushi.jpg",
+    "categoryId": 2,
+    "authorId": 1
+  },
+  {
+    "name": "Pasta",
+    "description": "Homemade pasta with rich tomato sauce.",
+    "price": 13000,
+    "imgUrl": "https://example.com/pasta.jpg",
+    "categoryId": 1,
+    "authorId": 2
+  },
+  {
+    "name": "Steak",
+    "description": "A perfectly cooked steak with a savory sauce.",
+    "price": 17000,
+    "imgUrl": "https://example.com/steak.jpg",
+    "categoryId": 5,
+    "authorId": 1
+  },
+  {
+    "name": "Ice Cream",
+    "description": "Creamy and delightful ice cream with various flavors.",
+    "price": 15000,
+    "imgUrl": "https://example.com/ice-cream.jpg",
+    "categoryId": 3,
+    "authorId": 2
+  },
+  {
+    "name": "Salad",
+    "description": "Fresh and healthy salad with a zesty dressing.",
+    "price": 10000,
+    "imgUrl": "https://example.com/salad.jpg",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Taco",
+    "description": "Spicy and flavorful tacos with your choice of fillings.",
+    "price": 14000,
+    "imgUrl": "https://example.com/taco.jpg",
+    "categoryId": 4,
+    "authorId": 2
+  },
+  {
+    "name": "Sushi",
+    "description": "Fresh and flavorful sushi rolls.",
+    "price": 16000,
+    "imgUrl": "https://example.com/sushi.jpg",
+    "categoryId": 2,
+    "authorId": 1
+  },
+  {
+    "name": "Burrito",
+    "description": "Giant burrito with a variety of fillings.",
+    "price": 19000,
+    "imgUrl": "https://example.com/burrito.jpg",
+    "categoryId": 5,
+    "authorId": 2
+  },
+  {
+    "name": "Wings",
+    "description": "Crispy chicken wings with your choice of sauce.",
+    "price": 12000,
+    "imgUrl": "https://example.com/wings.jpg",
+    "categoryId": 4,
+    "authorId": 1
+  },
+  {
+    "name": "Soup",
+    "description": "Comforting and warm soup with fresh ingredients.",
+    "price": 11000,
+    "imgUrl": "https://example.com/soup.jpg",
+    "categoryId": 1,
+    "authorId": 2
+  },
+  {
+    "name": "Sushi",
+    "description": "Fresh and flavorful sushi rolls.",
+    "price": 17500,
+    "imgUrl": "https://example.com/sushi.jpg",
+    "categoryId": 2,
+    "authorId": 1
+  },
+  {
+    "name": "Burger",
+    "description": "Juicy burger with a side of crispy fries.",
+    "price": 12500,
+    "imgUrl": "https://example.com/burger.jpg",
+    "categoryId": 4,
+    "authorId": 2
+  },
+  {
+    "name": "Sandwich",
+    "description": "A classic sandwich with fresh ingredients.",
+    "price": 10500,
+    "imgUrl": "https://example.com/sandwich.jpg",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Taco",
+    "description": "Spicy and flavorful tacos with your choice of fillings.",
+    "price": 13500,
+    "imgUrl": "https://example.com/taco.jpg",
+    "categoryId": 4,
+    "authorId": 2
+  },
+  {
+    "name": "Sushi",
+    "description": "Fresh and flavorful sushi rolls.",
+    "price": 18500,
+    "imgUrl": "https://example.com/sushi.jpg",
+    "categoryId": 2,
+    "authorId": 1
+  },
+  {
+    "name": "Pizza",
+    "description": "Delicious and cheesy pizza with your favorite toppings.",
+    "price": 14500,
+    "imgUrl": "https://example.com/pizza.jpg",
+    "categoryId": 3,
+    "authorId": 2
+  },
+  {
+    "name": "Pasta",
+    "description": "Homemade pasta with rich tomato sauce.",
+    "price": 13000,
+    "imgUrl": "https://example.com/pasta.jpg",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Steak",
+    "description": "A perfectly cooked steak with a savory sauce.",
+    "price": 16500,
+    "imgUrl": "https://example.com/steak.jpg",
+    "categoryId": 5,
+    "authorId": 2
+  }
+]
