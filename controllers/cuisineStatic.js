@@ -65,10 +65,12 @@ class CuisineStatic {
 
       const editCuisine = await Cuisine.update(
         { name, description, price, imageUrl, categoryId, authorId },
-        { where: { id } }
+        { where: { id } },
+        { returning: true }
       );
 
-      console.log(editCuisine);
+      // console.log(editCuisine, "<<<< editCuisine");
+
       const updatedCuisine = await Cuisine.findByPk(id);
 
       res.status(201).json({

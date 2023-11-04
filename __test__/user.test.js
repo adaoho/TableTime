@@ -111,7 +111,7 @@ describe("User Router Test", () => {
           .send(bodyAdduser)
           .set("authorization", `Bearer ${access_token}`);
 
-        console.log(response.text);
+        // console.log(response.text);
 
         expect(response.status).toBe(201);
         expect(response.body).toBeInstanceOf(Object);
