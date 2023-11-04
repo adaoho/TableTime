@@ -40,7 +40,7 @@ This document provides an overview of the API endpoints and their usage for our 
 
 ## 1. POST /add-user
 
-This is where user with default role staff can create an account
+Endpoint to create account user with default role "staff"
 
 #### Request - Body
 
