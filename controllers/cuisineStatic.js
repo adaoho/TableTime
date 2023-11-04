@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Cuisine } = require("../models");
+const { Cuisine, User } = require("../models");
 const instance = require("../api/imageUpload");
 const FormData = require("form-data");
 
@@ -28,7 +28,17 @@ class CuisineStatic {
 
   static async getCuisine(req, res, next) {
     try {
-      const getCuisine = await Cuisine.findAll();
+      const getCuisine = await Cuisine.findAll({
+        attributes: {
+          exclude: ["createdAt", "updatedAt"],
+        },
+        include: {
+          model: User,
+          attributes: {
+            exclude: ["password", "createdAt", "updatedAt"],
+          },
+        },
+      });
 
       res.status(200).json({
         getCuisine,

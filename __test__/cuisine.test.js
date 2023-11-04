@@ -448,6 +448,45 @@ describe("Cuisine Router Test", () => {
         expect(response.body).toHaveProperty("message", "Name can't be Empty");
       });
 
+      it("400 - should return error while description is empty", async () => {
+        const bodyAdd = {
+          name: "pizza",
+          description: "",
+          price: 10000,
+          imgUrl: "https://example.com/pizza.jpeg",
+          categoryId: 1,
+        };
+        const response = await request(app)
+          .post("/cuisine")
+          .send(bodyAdd)
+          .set("authorization", "Bearer " + access_token_admin);
+
+        expect(response.status).toBe(400);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty(
+          "message",
+          "Description can't be Empty"
+        );
+      });
+
+      it("400 - should return error while price is empty", async () => {
+        const bodyAdd = {
+          name: "pizza",
+          description: "best food",
+          price: "",
+          imgUrl: "https://example.com/pizza.jpeg",
+          categoryId: 1,
+        };
+        const response = await request(app)
+          .post("/cuisine")
+          .send(bodyAdd)
+          .set("authorization", "Bearer " + access_token_admin);
+
+        expect(response.status).toBe(400);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty("message", "Price can't be Empty");
+      });
+
       it("400 - should return error while price isn't meet minimum price", async () => {
         const bodyAdd = {
           name: "pizza",
@@ -487,6 +526,27 @@ describe("Cuisine Router Test", () => {
         expect(response.body).toHaveProperty(
           "message",
           "Image URL can't be Empty"
+        );
+      });
+
+      it("400 - should return error while categoryId is empty", async () => {
+        const bodyAdd = {
+          name: "pizza",
+          description: "best food",
+          price: 100000,
+          imgUrl: "https://example.com/pizza.jpeg",
+          categoryId: "",
+        };
+        const response = await request(app)
+          .post("/cuisine")
+          .send(bodyAdd)
+          .set("authorization", "Bearer " + access_token_admin);
+
+        expect(response.status).toBe(400);
+        expect(response.body).toBeInstanceOf(Object);
+        expect(response.body).toHaveProperty(
+          "message",
+          "categoryId can't be Empty"
         );
       });
     });

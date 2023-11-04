@@ -54,6 +54,14 @@ This is where user with default role staff can create an account
 }
 ```
 
+#### Request - Headers - Authorization (Bearer Scheme)
+
+```http
+Authorization: Bearer <access_token>
+```
+
+_\*Only access_token with role 'admin' can access this endpoint_
+
 <details>
 <summary>
 Click here for Response
@@ -153,7 +161,12 @@ OR
 {
   "message": "Password Can't be Empty"
 }
-OR
+
+```
+
+_Response (401 - Unauthorized)_
+
+```json
 {
   "message": "Invalid email/password"
 }
@@ -179,12 +192,10 @@ OR
 }
 ```
 
-#### Request - Headers
+#### Request - Headers - Authorization (Bearer Scheme)
 
-```json
-{
-  "access_token": "string"
-}
+```http
+Authorization: Bearer <access_token>
 ```
 
 <details>
@@ -255,12 +266,10 @@ _Response (401 - Unauthorized)_
 
 ## 4. GET /cuisine
 
-#### Request - Headers
+#### Request - Headers - Authorization (Bearer Scheme)
 
-```json
-{
-  "access_token": "string"
-}
+```http
+Authorization: Bearer <access_token>
 ```
 
 <details>
@@ -275,26 +284,38 @@ _Response (200 - OK)_
   "getCuisine": [
     {
       "id": 1,
-      "name": "Sloppy Joes",
-      "description": "This beats canned or boxed ...",
-      "price": 12000,
-      "imgUrl": "https://img.sndimg.com/.....",
-      "categoryId": 1,
+      "name": "Pizza",
+      "description": "Delicious and cheesy pizza with your favorite toppings.",
+      "price": 15000,
+      "imgUrl": "https://example.com/pizza.jpg",
+      "categoryId": 3,
       "authorId": 1,
-      "createdAt": "2023-10-30T20:25:08.875Z",
-      "updatedAt": "2023-10-30T20:25:08.875Z"
+      "User": {
+        "id": 1,
+        "username": "Nugroho Adnan",
+        "email": "adaoho@mail.com",
+        "role": "admin",
+        "phoneNumber": "0217407080",
+        "address": "South Tangerang Pamulang 2"
+      }
     },
     {
-      "id": 2,
-      "name": "Homemade Pasta",
-      "description": "Nothing beats homemade ...",
-      "price": 25000,
-      "imgUrl": "https://img.sndimg.com/food/....",
-      "categoryId": 1,
+      "id": 3,
+      "name": "Sushi",
+      "description": "Fresh and flavorful sushi rolls.",
+      "price": 18000,
+      "imgUrl": "https://example.com/sushi.jpg",
+      "categoryId": 2,
       "authorId": 1,
-      "createdAt": "2023-10-31T01:54:05.822Z",
-      "updatedAt": "2023-10-31T01:54:05.822Z"
-    }
+      "User": {
+        "id": 1,
+        "username": "Nugroho Adnan",
+        "email": "adaoho@mail.com",
+        "role": "admin",
+        "phoneNumber": "0217407080",
+        "address": "South Tangerang Pamulang 2"
+      }
+    },
     ...
   ]
 }
@@ -316,19 +337,17 @@ _Response (401 - Unauthorized)_
 
 ## 5. GET /cuisine/:id
 
-#### Request - Headers
+#### Request - Headers - Authorization (Bearer Scheme)
 
-```json
-{
-  "access_token": "string"
-}
+```http
+Authorization: Bearer <access_token>
 ```
 
 #### Request - Params
 
 ```json
 {
-  "id": "integer (required)"
+  "id": "<integer>"
 }
 ```
 
@@ -371,6 +390,14 @@ _Response (401 - Unauthorized)_
 }
 ```
 
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Error Data Not Found"
+}
+```
+
 &nbsp;
 
 </details>
@@ -391,21 +418,21 @@ _Response (401 - Unauthorized)_
 }
 ```
 
-#### Request - Headers
-
-```json
-{
-  "access_token": "string"
-}
-```
-
 #### Request - Params
 
 ```json
 {
-  "id": "integer (required)"
+  "id": "<integer>"
 }
 ```
+
+#### Request - Headers - Authorization (Bearer Scheme)
+
+```http
+Authorization: Bearer <access_token>
+```
+
+_\*An access_token with the 'admin' role can access all data, while a 'staff' role access_token can only access their own data_
 
 <details>
 <summary>
@@ -433,10 +460,6 @@ _Response (200 - OK)_
 _Response (400 - Bad Request)_
 
 ```json
-{
-  "message": "Error Data Not Found"
-}
-OR
 {
   "message": "Name can't be Empty"
 }
@@ -478,6 +501,14 @@ _Response (403 - Forbidden)_
 }
 ```
 
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Error Data Not Found"
+}
+```
+
 &nbsp;
 
 </details>
@@ -490,15 +521,7 @@ _Response (403 - Forbidden)_
 
 ```json
 {
-  "imageUrl": "file"
-}
-```
-
-#### Request - Headers
-
-```json
-{
-  "access_token": "string"
+  "imageUrl": "<file>"
 }
 ```
 
@@ -509,6 +532,14 @@ _Response (403 - Forbidden)_
   "id": "integer (required)"
 }
 ```
+
+#### Request - Headers - Authorization (Bearer Scheme)
+
+```http
+Authorization: Bearer <access_token>
+```
+
+_\*An access_token with the 'admin' role can access all data, while a 'staff' role access_token can only access their own data_
 
 <details>
 <summary>
@@ -527,11 +558,7 @@ _Response (400 - Bad Request)_
 
 ```json
 {
-  "message": "Error Data Not Found"
-}
-OR
-{
-  "message": "Image URL can't be Empty"
+  "message": "ImageURL can't be Empty"
 }
 ```
 
@@ -551,6 +578,14 @@ _Response (403 - Forbidden)_
 }
 ```
 
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Error Data Not Found"
+}
+```
+
 &nbsp;
 
 </details>
@@ -559,21 +594,21 @@ _Response (403 - Forbidden)_
 
 ## 8. DELETE /cuisine/:id
 
-#### Request - Headers
-
-```json
-{
-  "access_token": "string"
-}
-```
-
 #### Request - Params
 
 ```json
 {
-  "id": "integer (required)"
+  "id": "<integer>"
 }
 ```
+
+#### Request - Headers - Authorization (Bearer Scheme)
+
+```http
+Authorization: Bearer <access_token>
+```
+
+_\*An access_token with the 'admin' role can access all data, while a 'staff' role access_token can only access their own data_
 
 <details>
 <summary>
@@ -588,14 +623,6 @@ _Response (200 - OK)_
 }
 ```
 
-_Response (400 - Bad Request)_
-
-```json
-{
-  "message": "Error Data Not Found"
-}
-```
-
 _Response (401 - Unauthorized)_
 
 ```json
@@ -612,6 +639,14 @@ _Response (403 - Forbidden)_
 }
 ```
 
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Error Data Not Found"
+}
+```
+
 &nbsp;
 
 </details>
@@ -620,12 +655,10 @@ _Response (403 - Forbidden)_
 
 ## 9. GET /category/
 
-#### Request - Headers
+#### Request - Headers - Authorization (Bearer Scheme)
 
-```json
-{
-  "access_token": "string"
-}
+```http
+Authorization: Bearer <access_token>
 ```
 
 <details>
@@ -679,12 +712,10 @@ _Response (401 - Unauthorized)_
 }
 ```
 
-#### Request - Headers
+#### Request - Headers - Authorization (Bearer Scheme)
 
-```json
-{
-  "access_token": "string"
-}
+```http
+Authorization: Bearer <access_token>
 ```
 
 <details>
@@ -737,21 +768,21 @@ _Response (401 - Unauthorized)_
 }
 ```
 
-#### Request - Headers
-
-```json
-{
-  "access_token": "string"
-}
-```
-
 #### Request - Params
 
 ```json
 {
-  "id": "integer (required)"
+  "id": "<integer>"
 }
 ```
+
+#### Request - Headers - Authorization (Bearer Scheme)
+
+```http
+Authorization: Bearer <access_token>
+```
+
+_\*An access_token with the 'admin' role can access all data, while a 'staff' role access_token can only access their own data_
 
 <details>
 <summary>
@@ -775,10 +806,6 @@ _Response (400 - Bad Request)_
 
 ```json
 {
-  "message": "Error Data Not Found"
-}
-OR
-{
   "message": "Name can't be Empty"
 }
 ```
@@ -791,6 +818,22 @@ _Response (401 - Unauthorized)_
 }
 ```
 
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You're Not Authorized"
+}
+```
+
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Error Data Not Found"
+}
+```
+
 &nbsp;
 
 </details>
@@ -799,21 +842,21 @@ _Response (401 - Unauthorized)_
 
 ## 12. DELETE /category/:id
 
-#### Request - Headers
-
-```json
-{
-  "access_token": "string"
-}
-```
-
 #### Request - Params
 
 ```json
 {
-  "id": "integer (required)"
+  "id": "<integer>"
 }
 ```
+
+#### Request - Headers - Authorization (Bearer Scheme)
+
+```http
+Authorization: Bearer <access_token>
+```
+
+_\*An access_token with the 'admin' role can access all data, while a 'staff' role access_token can only access their own data_
 
 <details>
 <summary>
@@ -828,19 +871,27 @@ _Response (200 - OK)_
 }
 ```
 
-_Response (400 - Bad Request)_
-
-```json
-{
-  "message": "Error Data Not Found"
-}
-```
-
 _Response (401 - Unauthorized)_
 
 ```json
 {
   "message": "You're Not Authenticated"
+}
+```
+
+_Response (403 - Forbidden)_
+
+```json
+{
+  "message": "You're Not Authorized"
+}
+```
+
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Error Data Not Found"
 }
 ```
 
@@ -858,26 +909,75 @@ _Response (401 - Unauthorized)_
 
 ## 1. GET /pub/
 
+When the query parameters are provided, this endpoint should support data filtering based on the specified query keys and their corresponding values.
+
+#### Request - Query (Optional)
+
+```json
+{
+  "name": "<string>"
+}
+OR
+{
+  "page": "<integer>"
+}
+OR
+{
+  "category": "<array of integer> or <integer>"
+}
+OR
+{
+  "sort": "<string>"
+}
+```
+
+<details>
+<summary>
+Click here for Response
+</summary>
+
 _Response (200 - OK)_
 
 ```json
 {
+  "currentPage": 1,
+  "totalData": 16,
+  "totalPage": 2,
   "getCuisine": [
     {
-      "id": 2,
-      "name": "Homemade Pasta",
-      "description": "Nothing beats ...",
-      "price": 25000,
-      "imgUrl": "https://img.sndimg.com/...",
-      "categoryId": 1,
+      "id": 1,
+      "name": "Pizza",
+      "description": "Delicious and cheesy pizza with your favorite toppings.",
+      "price": 15000,
+      "imgUrl": "https://example.com/pizza.jpg",
+      "categoryId": 3,
       "authorId": 1,
-      "createdAt": "2023-10-31T01:54:05.822Z",
-      "updatedAt": "2023-10-31T01:54:05.822Z"
+      "Category": {
+        "id": 3,
+        "name": "Sushi"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sushi",
+      "description": "Fresh and flavorful sushi rolls.",
+      "price": 18000,
+      "imgUrl": "https://example.com/sushi.jpg",
+      "categoryId": 2,
+      "authorId": 1,
+      "Category": {
+        "id": 2,
+        "name": "Pizza"
+      }
     },
     ...
   ]
 }
 ```
+
+&nbsp;
+
+</details>
 
 <!-- 2. GET /pub/:id -->
 
@@ -887,7 +987,7 @@ _Response (200 - OK)_
 
 ```json
 {
-  "id": "integer (required)"
+  "id": "<integer>"
 }
 ```
 
@@ -914,7 +1014,7 @@ _Response (200 - OK)_
 }
 ```
 
-_Response (400 - Bad Request)_
+_Response (404 - Not Found)_
 
 ```json
 {
