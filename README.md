@@ -6,7 +6,8 @@
 
 # Table Time API Documentation
 
-This document provides an overview of the API endpoints and their usage for our service.
+This document provides an overview of the API endpoints and their usage for our service, <br>
+that can be access on http://adaoho.my.id/
 
 ### 1. Available endpoints for **_CMS Admin_**
 

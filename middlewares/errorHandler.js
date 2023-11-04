@@ -60,6 +60,8 @@ function errorHandler(err, req, res, next) {
       break;
 
     default:
+      status = 500;
+      message = "Internal Server Error";
       break;
   }
 
