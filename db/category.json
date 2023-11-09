@@ -1,7 +1,8 @@
 [
-  { "name": "Burgers" },
-  { "name": "Pizza" },
-  { "name": "Sushi" },
-  { "name": "Mexican" },
-  { "name": "Italian" }
+  { "name": "Bakery Dining" },
+  { "name": "Local Pizza" },
+  { "name": "Dinner Dining" },
+  { "name": "Bento Food" },
+  { "name": "Egg Based" },
+  { "name": "Baverage Drink" }
 ]

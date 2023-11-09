@@ -7,7 +7,7 @@
 # Table Time API Documentation
 
 This document provides an overview of the API endpoints and their usage for our service, <br>
-that can be access on http://adaoho.my.id/
+that can be access on http://server.tabletime.online
 
 ### 1. Available endpoints for **_CMS Admin_**
 

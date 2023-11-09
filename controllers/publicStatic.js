@@ -16,7 +16,7 @@ class PublicStatic {
         },
       };
 
-      let limit = 10;
+      let limit = 12;
       const { name, page, category, sort } = req.query;
 
       if (name || category || sort) {

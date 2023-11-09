@@ -1,161 +1,193 @@
 [
   {
     "name": "Pizza",
-    "description": "Delicious and cheesy pizza with your favorite toppings.",
+    "description": "Indulge in cheesy goodness with your favorite toppings.",
     "price": 15000,
-    "imgUrl": "https://example.com/pizza.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?pizza",
     "categoryId": 3,
     "authorId": 1
   },
   {
     "name": "Burger",
-    "description": "Juicy burger with a side of crispy fries.",
+    "description": "Savor a juicy delight with crispy, golden fries.",
     "price": 12000,
-    "imgUrl": "https://example.com/burger.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?burger",
     "categoryId": 4,
     "authorId": 2
   },
   {
     "name": "Sushi",
-    "description": "Fresh and flavorful sushi rolls.",
+    "description": "Experience fresh, flavorful rolls that delight your senses.",
     "price": 18000,
-    "imgUrl": "https://example.com/sushi.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?sushi",
     "categoryId": 2,
     "authorId": 1
   },
   {
     "name": "Pasta",
-    "description": "Homemade pasta with rich tomato sauce.",
+    "description": "Homemade pasta with a rich, comforting tomato sauce.",
     "price": 13000,
-    "imgUrl": "https://example.com/pasta.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?pasta",
     "categoryId": 1,
     "authorId": 2
   },
   {
     "name": "Steak",
-    "description": "A perfectly cooked steak with a savory sauce.",
+    "description": "Savor a perfectly cooked steak with savory sauce.",
     "price": 17000,
-    "imgUrl": "https://example.com/steak.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?steak",
     "categoryId": 5,
     "authorId": 1
   },
   {
     "name": "Ice Cream",
-    "description": "Creamy and delightful ice cream with various flavors.",
+    "description": "Delight in creamy, delightful flavors of ice cream.",
     "price": 15000,
-    "imgUrl": "https://example.com/ice-cream.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?ice-cream",
     "categoryId": 3,
     "authorId": 2
   },
   {
     "name": "Salad",
-    "description": "Fresh and healthy salad with a zesty dressing.",
+    "description": "Savor fresh, healthy salad with zesty dressing.",
     "price": 10000,
-    "imgUrl": "https://example.com/salad.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?salad-food",
     "categoryId": 1,
     "authorId": 1
   },
   {
     "name": "Taco",
-    "description": "Spicy and flavorful tacos with your choice of fillings.",
+    "description": "Spice up your day with flavorful taco choices.",
     "price": 14000,
-    "imgUrl": "https://example.com/taco.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?taco-food",
     "categoryId": 4,
     "authorId": 2
   },
   {
-    "name": "Sushi",
-    "description": "Fresh and flavorful sushi rolls.",
+    "name": "Fried Noodle",
+    "description": "Savor fresh and flavorful noodles with style.",
     "price": 16000,
-    "imgUrl": "https://example.com/sushi.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?fried-noodle-food",
     "categoryId": 2,
     "authorId": 1
   },
   {
     "name": "Burrito",
-    "description": "Giant burrito with a variety of fillings.",
+    "description": "Indulge in a giant burrito with diverse fillings.",
     "price": 19000,
-    "imgUrl": "https://example.com/burrito.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?burrito",
     "categoryId": 5,
     "authorId": 2
   },
   {
-    "name": "Wings",
-    "description": "Crispy chicken wings with your choice of sauce.",
+    "name": "Chicken Wings",
+    "description": "Crispy wings with a choice of tantalizing sauce.",
     "price": 12000,
-    "imgUrl": "https://example.com/wings.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?chicken-wings",
     "categoryId": 4,
     "authorId": 1
   },
   {
     "name": "Soup",
-    "description": "Comforting and warm soup with fresh ingredients.",
+    "description": "Warm your soul with comforting, fresh ingredients.",
     "price": 11000,
-    "imgUrl": "https://example.com/soup.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?soup",
     "categoryId": 1,
     "authorId": 2
   },
   {
-    "name": "Sushi",
-    "description": "Fresh and flavorful sushi rolls.",
+    "name": "Noodle",
+    "description": "Savor fresh, flavorful noodles that satisfy cravings.",
     "price": 17500,
-    "imgUrl": "https://example.com/sushi.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?noodle",
     "categoryId": 2,
     "authorId": 1
   },
   {
-    "name": "Burger",
-    "description": "Juicy burger with a side of crispy fries.",
+    "name": "Nasi Goreng",
+    "description": "Enjoy a juicy burger with crispy, tasty fries.",
     "price": 12500,
-    "imgUrl": "https://example.com/burger.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?nasi-goreng",
     "categoryId": 4,
     "authorId": 2
+  },
+  {
+    "name": "Nasi Kuning",
+    "description": "Embrace a classic sandwich with fresh ingredients.",
+    "price": 10500,
+    "imgUrl": "https://source.unsplash.com/300x300/?nasi-kuning",
+    "categoryId": 1,
+    "authorId": 1
   },
   {
     "name": "Sandwich",
-    "description": "A classic sandwich with fresh ingredients.",
-    "price": 10500,
-    "imgUrl": "https://example.com/sandwich.jpg",
-    "categoryId": 1,
-    "authorId": 1
-  },
-  {
-    "name": "Taco",
-    "description": "Spicy and flavorful tacos with your choice of fillings.",
+    "description": "Delight in spicy, flavorful sandwiches of your choice.",
     "price": 13500,
-    "imgUrl": "https://example.com/taco.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?sandwich",
     "categoryId": 4,
     "authorId": 2
   },
   {
-    "name": "Sushi",
-    "description": "Fresh and flavorful sushi rolls.",
+    "name": "Sushi Roll",
+    "description": "Indulge in fresh, flavorful sushi rolls today.",
     "price": 18500,
-    "imgUrl": "https://example.com/sushi.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?sushi-rool",
     "categoryId": 2,
     "authorId": 1
   },
   {
-    "name": "Pizza",
-    "description": "Delicious and cheesy pizza with your favorite toppings.",
+    "name": "French Fries",
+    "description": "Delight in delicious, cheesy fries with your toppings.",
     "price": 14500,
-    "imgUrl": "https://example.com/pizza.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?pizza",
     "categoryId": 3,
     "authorId": 2
   },
   {
-    "name": "Pasta",
-    "description": "Homemade pasta with rich tomato sauce.",
+    "name": "Chicken",
+    "description": "Savor homemade pasta with rich, tomato goodness.",
     "price": 13000,
-    "imgUrl": "https://example.com/pasta.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?chicken-food",
     "categoryId": 1,
     "authorId": 1
   },
   {
-    "name": "Steak",
+    "name": "Steak Western",
+    "description": "Experience perfectly cooked steak with savory Western sauce.",
+    "price": 16500,
+    "imgUrl": "https://source.unsplash.com/300x300/?steak-western",
+    "categoryId": 5,
+    "authorId": 2
+  },
+  {
+    "name": "Coffee",
+    "description": "Awaken your senses with perfectly brewed coffee.",
+    "price": 16500,
+    "imgUrl": "https://source.unsplash.com/300x300/?coffee-drink",
+    "categoryId": 5,
+    "authorId": 2
+  },
+  {
+    "name": "Milk Juice",
+    "description": "Sip on the creamy delight of fresh milk.",
+    "price": 16500,
+    "imgUrl": "https://source.unsplash.com/300x300/?milk-drink-glass",
+    "categoryId": 5,
+    "authorId": 2
+  },
+  {
+    "name": "Fruit Juice",
     "description": "A perfectly cooked steak with a savory sauce.",
     "price": 16500,
-    "imgUrl": "https://example.com/steak.jpg",
+    "imgUrl": "https://source.unsplash.com/300x300/?fruit-juice-drink",
+    "categoryId": 5,
+    "authorId": 2
+  },
+  {
+    "name": "Tea",
+    "description": "A perfectly cooked steak with a savory sauce.",
+    "price": 16500,
+    "imgUrl": "https://source.unsplash.com/300x300/?tea-drink",
     "categoryId": 5,
     "authorId": 2
   }
