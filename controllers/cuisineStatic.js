@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Cuisine, User } = require("../models");
+const { Cuisine, User, Category } = require("../models");
 const instance = require("../api/imageUpload");
 const FormData = require("form-data");
 
@@ -32,12 +32,20 @@ class CuisineStatic {
         attributes: {
           exclude: ["createdAt", "updatedAt"],
         },
-        include: {
-          model: User,
-          attributes: {
-            exclude: ["password", "createdAt", "updatedAt"],
+        include: [
+          {
+            model: User,
+            attributes: {
+              exclude: ["password", "createdAt", "updatedAt"],
+            },
           },
-        },
+          {
+            model: Category,
+            attributes: {
+              exclude: ["createdAt", "updatedAt"],
+            },
+          },
+        ],
       });
 
       res.status(200).json({
@@ -52,7 +60,10 @@ class CuisineStatic {
     try {
       const { id } = req.params;
 
-      const findCuisine = await Cuisine.findByPk(id);
+      const findCuisine = await Cuisine.findOne({
+        where: { id },
+        include: Category,
+      });
 
       if (!findCuisine) throw { name: "NotFound" };
 

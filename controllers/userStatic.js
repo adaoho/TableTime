@@ -59,6 +59,9 @@ class UserStatic {
 
       res.status(200).json({
         access_token,
+        email: findUser.email,
+        username: findUser.username,
+        role: findUser.role,
       });
     } catch (error) {
       next(error);
