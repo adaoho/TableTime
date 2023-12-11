@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Let's Try</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Login Page for Admin -->
+    <section id="login-page" style="display: none">
+      <div class="flex justify-center items-center h-screen bg-white">
+        <div
+          class="w-full max-w-md p-8 space-y-3 rounded-xl text-gray-100 shadow-2xl bg-white"
+        >
+          <div class="flex flex-col justify-center items-center mb-4 w-full">
+            <img src="assets/tabletime_logo.png" class="h-20 object-contain" />
+            <!-- <p class="text-xs font-normal text-gray-800 text-center">Welcome to Admin Dashboard</p> -->
+          </div>
+
+          <form novalidate="" action="" class="space-y-6">
+            <div class="space-y-1 text-sm">
+              <label for="username" class="block text-gray-500">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="type your email"
+                class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+              />
+            </div>
+            <div class="space-y-1 text-sm">
+              <label for="password" class="block text-gray-500">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="type your password"
+                class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+              />
+            </div>
+            <button
+              class="block w-full p-3 text-center rounded-md bg-red-500 text-white font-bold hover:bg-orange-500 transition-all hover:scale-105 active:scale-90 hover:text-gray-100"
+            >
+              Sign in
+            </button>
+          </form>
+          <div class="flex items-center pt-4 space-x-1">
+            <div class="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+            <p class="px-3 text-sm dark:text-gray-400">
+              Login with social accounts
+            </p>
+            <div class="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
+          </div>
+          <div class="flex justify-center space-x-4">
+            <button
+              aria-label="Log in with Google"
+              class="p-3 text-gray-500 rounded-sm hover:text-red-500 hover:scale-105"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              aria-label="Log in with Twitter"
+              class="p-3 text-gray-500 rounded-sm hover:text-red-500 hover:scale-105"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"
+                ></path>
+              </svg>
+            </button>
+            <button
+              aria-label="Log in with GitHub"
+              class="p-3 text-gray-500 rounded-sm hover:text-red-500 hover:scale-105"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                class="w-5 h-5 fill-current"
+              >
+                <path
+                  d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <p class="text-xs text-center sm:px-6 dark:text-gray-400">
+            Don't have an account?
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              class="underline text-gray-800 hover:scale-105 hover:text-red-500 hover:font-bold"
+              >Sign up</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register Page for Admin -->
+    <section id="register-page" style="display: none">
+      <div class="flex justify-center items-center h-screen bg-white">
+        <div
+          class="w-full max-w-md p-8 space-y-3 rounded-xl text-gray-100 shadow-2xl bg-white"
+        >
+          <div class="flex flex-col justify-center items-center mb-4 w-full">
+            <img src="assets/tabletime_logo.png" class="h-20 object-contain" />
+            <p class="text-xs font-normal text-gray-400 text-center my-4">
+              Gain access to personalize dashboard Table Time Website. Please
+              inform your team to register on this website.
+            </p>
+          </div>
+          <form novalidate="" action="" class="space-y-6">
+            <div class="flex flex-row gap-x-3">
+              <div class="space-y-1 text-sm">
+                <label for="username" class="block text-gray-500"
+                  >Username</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="type your username"
+                  class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+                />
+              </div>
+
+              <div class="space-y-1 text-sm">
+                <label for="username" class="block text-gray-500">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="type your email"
+                  class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+                />
+              </div>
+            </div>
+            <div class="space-y-1 text-sm">
+              <label for="password" class="block text-gray-400">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Minimum 5 characters"
+                class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+              />
+              <!-- <div class="flex justify-end text-xs dark:text-gray-400">
+                    <a rel="noopener noreferrer" href="#">Forgot Password?</a>
+                  </div> -->
+            </div>
+            <div class="flex flex-row gap-x-3">
+              <div class="space-y-1 text-sm">
+                <label for="username" class="block text-gray-500"
+                  >Phone Number</label
+                >
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  placeholder="Your +62 number"
+                  class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+                />
+              </div>
+
+              <div class="space-y-1 text-sm">
+                <label for="username" class="block text-gray-500"
+                  >Address</label
+                >
+                <input
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="Province, city, or street"
+                  class="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40 required"
+                />
+              </div>
+            </div>
+            <button
+              class="block w-full p-3 text-center rounded-md bg-red-500 text-white font-bold hover:bg-orange-500 transition-all hover:scale-105 active:scale-90 hover:text-gray-100"
+            >
+              Register Now
+            </button>
+          </form>
+          <div class="flex items-center pt-4 space-x-1">
+            <div class="flex-1 h-px sm:w-16 bg-gray-500"></div>
+            <p class="text-xs text-center sm:px-6 dark:text-gray-400">
+              Already have an account?
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="underline text-gray-800 hover:scale-105 hover:text-red-500 hover:font-bold"
+                >Log In</a
+              >
+            </p>
+            <div class="flex-1 h-px sm:w-16 bg-gray-500"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CMS Dashboard -->
+    <section id="side-nav" class="flex" style="display: none">
+      <!-- SideBar -->
+      <div
+        class="flex flex-col h-screen p-6 w-60 bg-gray-100 text-gray-900 justify-between"
+      >
+        <div class="space-y-4 mt-8">
+          <div
+            class="flex items-center justify-between font-bold text-2xl flex-col"
+          >
+            <img src="/assets/tabletime_logo.png" alt="" />
+          </div>
+
+          <!-- Input Search -->
+          <div class="relative mt-2">
+            <span class="absolute inset-y-0 left-0 flex items-center py-4">
+              <button type="submit" class="p-2 focus:outline-none focus:ring">
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                  class="w-5 h-5 dark:text-gray-400"
+                >
+                  <path
+                    d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                  ></path>
+                </svg>
+              </button>
+            </span>
+            <input
+              type="search"
+              name="Search"
+              placeholder="Search..."
+              class="w-full py-2 pl-10 rounded-md text-sm border-gray-700 bg-gray-200 focus:outline-none focus:ring focus:ring-red-200 placeholder-gray-600 placeholder-opacity-40"
+            />
+          </div>
+
+          <!-- Input List Bar -->
+          <div class="flex-1">
+            <ul class="pt-2 pb-4 space-y-1 text-sm">
+              <li
+                class="group rounded-sm text-gray-600 transition-all hover:border-b-2 hover:border-red-500 hover:text-red-500 active:text-red-300 active:border-red-300"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  class="flex items-center p-2 space-x-3 rounded-md"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="w-5 h-5 fill-current text-gray-400 group-hover:text-red-500 group-active:text-red-300"
+                  >
+                    <path
+                      d="M469.666,216.45,271.078,33.749a34,34,0,0,0-47.062.98L41.373,217.373,32,226.745V496H208V328h96V496H480V225.958ZM248.038,56.771c.282,0,.108.061-.013.18C247.9,56.832,247.756,56.771,248.038,56.771ZM448,464H336V328a32,32,0,0,0-32-32H208a32,32,0,0,0-32,32V464H64V240L248.038,57.356c.013-.012.014-.023.024-.035L448,240Z"
+                    ></path>
+                  </svg>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li
+                class="group rounded-sm text-gray-600 transition-all hover:border-b-2 hover:border-red-500 hover:text-red-500 active:text-red-300 active:border-red-300"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  class="flex items-center p-2 space-x-3 rounded-md"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="w-5 h-5 fill-current text-gray-400 group-hover:text-red-500 group-active:text-red-300"
+                  >
+                    <path
+                      d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                    ></path>
+                  </svg>
+                  <span>Cuisine</span>
+                </a>
+              </li>
+              <li
+                class="group rounded-sm text-gray-600 transition-all hover:border-b-2 hover:border-red-500 hover:text-red-500 active:text-red-300 active:border-red-300"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  class="flex items-center p-2 space-x-3 rounded-md"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="w-5 h-5 fill-current text-gray-400 group-hover:text-red-500 group-active:text-red-300"
+                  >
+                    <path
+                      d="M448.205,392.507c30.519-27.2,47.8-63.455,47.8-101.078,0-39.984-18.718-77.378-52.707-105.3C410.218,158.963,366.432,144,320,144s-90.218,14.963-123.293,42.131C162.718,214.051,144,251.445,144,291.429s18.718,77.378,52.707,105.3c33.075,27.168,76.861,42.13,123.293,42.13,6.187,0,12.412-.273,18.585-.816l10.546,9.141A199.849,199.849,0,0,0,480,496h16V461.943l-4.686-4.685A199.17,199.17,0,0,1,448.205,392.507ZM370.089,423l-21.161-18.341-7.056.865A180.275,180.275,0,0,1,320,406.857c-79.4,0-144-51.781-144-115.428S240.6,176,320,176s144,51.781,144,115.429c0,31.71-15.82,61.314-44.546,83.358l-9.215,7.071,4.252,12.035a231.287,231.287,0,0,0,37.882,67.817A167.839,167.839,0,0,1,370.089,423Z"
+                    ></path>
+                    <path
+                      d="M60.185,317.476a220.491,220.491,0,0,0,34.808-63.023l4.22-11.975-9.207-7.066C62.918,214.626,48,186.728,48,156.857,48,96.833,109.009,48,184,48c55.168,0,102.767,26.43,124.077,64.3,3.957-.192,7.931-.3,11.923-.3q12.027,0,23.834,1.167c-8.235-21.335-22.537-40.811-42.2-56.961C270.072,30.279,228.3,16,184,16S97.928,30.279,66.364,56.206C33.886,82.885,16,118.63,16,156.857c0,35.8,16.352,70.295,45.25,96.243a188.4,188.4,0,0,1-40.563,60.729L16,318.515V352H32a190.643,190.643,0,0,0,85.231-20.125,157.3,157.3,0,0,1-5.071-33.645A158.729,158.729,0,0,1,60.185,317.476Z"
+                    ></path>
+                  </svg>
+                  <span>Category</span>
+                </a>
+              </li>
+
+              <li
+                class="group rounded-sm text-gray-600 transition-all hover:border-b-2 hover:border-red-500 hover:text-red-500 active:text-red-300 active:border-red-300"
+              >
+                <a
+                  rel="noopener noreferrer"
+                  href="#"
+                  class="flex items-center p-2 space-x-3 rounded-md"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="w-5 h-5 fill-current text-gray-400 group-hover:text-red-500 group-active:text-red-300"
+                  >
+                    <path
+                      d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"
+                    ></path>
+                    <rect width="32" height="64" x="256" y="232"></rect>
+                  </svg>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div
+          class="flex items-center p-2 mt-12 space-x-4 justify-self-end mb-8"
+        >
+          <img
+            src="https://source.unsplash.com/100x100/?portrait"
+            alt=""
+            class="w-12 h-12 rounded-lg dark:bg-gray-500"
+          />
+          <div>
+            <h2 class="text-md font-semibold">Leroy Jenkins</h2>
+            <span class="flex items-center space-x-1">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="text-xs hover:underline dark:text-gray-400"
+                >View profile</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto w-full p-10">
+        <div class="flex flex-row justify-between items-center mb-6">
+          <!-- Breadcrumb -->
+          <div class="text-sm breadcrumbs text-gray-400">
+            <ul>
+              <li>
+                <a>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="w-4 h-4 mr-2 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                    ></path>
+                  </svg>
+                  Admin Dashboard
+                </a>
+              </li>
+              <li>
+                <a>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    class="w-4 h-4 mr-2 stroke-current"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+                    ></path>
+                  </svg>
+                  Cuisines
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Profile -->
+          <div
+            class="flex justify-end items-center py-1.25 pr-2 pl-3 gap-2 rounded-full shadow-md h-10 w-60 border"
+          >
+            <p class="text-xs text-gray-400 mr-[8px]">
+              adnannugroho19@gmail.com
+            </p>
+            <p
+              class="bg-red-500 text-white rounded-full w-7 h-7 text-center pt-1.5 text-[10px] font-semibold"
+            ></p>
+          </div>
+        </div>
+
+        <!-- Main Table -->
+        <table class="table">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>
+                <label>No</label>
+              </th>
+              <th>Name</th>
+              <th class="w-60">Description</th>
+              <th>Price</th>
+              <th>Author</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr>
+              <th>
+                <label>
+                  <input type="checkbox" class="checkbox" />
+                </label>
+              </th>
+              <td>
+                <div class="flex items-center space-x-3">
+                  <div class="avatar">
+                    <div class="mask mask-squircle w-12 h-12">
+                      <img
+                        src="https://source.unsplash.com/100x100/?indonesian-food"
+                        alt="Avatar Tailwind CSS Component"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-bold">Ice Cream</div>
+                    <div class="text-sm opacity-50">Beverages & Drink</div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                Delicious and cheesy pizza with your favorite toppings.
+                <br />
+                <!-- <span class="badge badge-ghost badge-sm"
+                  >Desktop Support Technician</span
+                > -->
+              </td>
+              <td>Rp 18,000</td>
+              <td class="text-green-600">nugroho@mail.com</td>
+              <th>
+                <button class="btn btn-ghost btn-xs">details</button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="flex relative justify-center items-center my-2">
+          <button
+            class="bg-gray-100 py-3 w-full rounded-md text-gray-600 hover:bg-red-500 hover:text-white hover:scale-105 transition-all font-bold active:scale-95"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Public Deashboard -->
+    <section id="public-dashboard" style="display: none">
+      <!-- Navbar -->
+      <div class="h-full w-full flex flex-col items-center">
+        <div
+          class="w-screen grid grid-cols-3 h-20 border-b-[1px] items-center fixed top-0 bg-white px-14"
+        >
+          <div class="pl-15">
+            <img src="assets/tabletime_logo.png" class="h-10 object-contain" />
+          </div>
+
+          <div class="px-4">
+            <div
+              class="flex items-center justify-evenly rounded-full shadow-md h-12 w-[420px] border"
+            >
+              <button
+                class="border-r-2 border-gray-100 px-4 text-sm font-medium"
+              >
+                Best Food
+              </button>
+              <button
+                class="border-r-2 border-gray-100 px-4 text-sm font-medium"
+              >
+                Chef Recomendation
+              </button>
+              <button class="border-gray-100 px-4 text-sm text-gray-400">
+                Our Location
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-end items-center pr-15 gap-8">
+            <p class="text-sm font-medium">Table Time Your Food</p>
+            <span class="material-symbols-outlined">language</span>
+            <div
+              class="flex justify-evenly items-center py-1.25 pr-1.25 pl-3 gap-2 rounded-full shadow-md h-10 w-20 border"
+            >
+              <i class="fa-solid fa-bars"></i>
+              <p
+                class="bg-black text-white rounded-full w-7 h-7 text-center pt-1.5 text-[10px] font-semibold"
+              >
+                E
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category bar -->
+
+        <div
+          class="h-24 w-screen flex items-center justify-center space-x-5 fixed top-20 bg-white z-0 shadow-md"
+        >
+          <div class="flex items-center space-x-10 justify-center">
+            <div
+              class="group flex flex-col items-center text-gray-400 gap-2 transition-all hover:text-black hover:border-b-2 hover:border-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 -960 960 960"
+                class="fill-current"
+              >
+                <path
+                  d="M804-282q17 9 30-4t4-30l-58-108-42 108 66 34Zm-200-38h48l96-238q3-8-1.5-13.5T736-580l-80-32q-9-3-17.5 2T628-596l-24 276Zm-296 0h48l-24-276q-2-11-10.5-15t-17.5-1l-80 32q-8 3-11.5 8.5T212-558l96 238Zm-152 38 66-34-42-108-58 108q-9 17 4 30t30 4Zm280-38h88l30-338q2-9-4.5-15.5T534-680H426q-8 0-14.5 6.5T406-658l30 338ZM138-200q-42 0-70-31.5T40-306q0-12 3.5-23.5T52-352l88-168q-14-40 1-79t53-55l80-32q14-5 28-7t28 1q14-29 39-48.5t57-19.5h108q32 0 57 19.5t39 48.5q14-2 28-.5t28 6.5l80 32q40 16 56 55t-2 77l88 168q6 11 9 23t3 25q0 45-30.5 75.5T814-200q-11 0-22-2.5t-22-7.5l-62-30H250l-56 30q-13 7-27.5 8.5T138-200Zm342-280Z"
+                />
+              </svg>
+              <p class="text-xs font-normal">Bakery Dining</p>
+            </div>
+            <div
+              class="group flex flex-col items-center text-gray-400 gap-2 transition-all hover:text-black hover:border-b-2 hover:border-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 -960 960 960"
+                class="fill-current"
+              >
+                <path
+                  d="M480-80 80-680q85-72 186.5-116T480-840q112 0 213.5 43.5T880-680L480-80Zm0-144 292-438q-65-45-139-71.5T480-760q-79 0-152.5 26.5T188-662l292 438ZM380-560q25 0 42.5-17.5T440-620q0-25-17.5-42.5T380-680q-25 0-42.5 17.5T320-620q0 25 17.5 42.5T380-560Zm100 200q25 0 42.5-17.5T540-420q0-25-17.5-42.5T480-480q-25 0-42.5 17.5T420-420q0 25 17.5 42.5T480-360Zm0 136Z"
+                />
+              </svg>
+              <p class="text-xs font-normal">Local Pizza</p>
+            </div>
+            <div
+              class="group flex flex-col items-center text-gray-400 gap-2 transition-all hover:text-black hover:border-b-2 hover:border-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 -960 960 960"
+                class="fill-current"
+              >
+                <path
+                  d="m160-120-80-80h800l-80 80H160Zm-40-120q6-18 16-34t24-30v-296h-40v-60h40v-30h-40v-60h40v-30h-40v-60h280q33 0 56.5 23.5T480-760v10h360v60H480v10q0 33-23.5 56.5T400-600h-80v244q14 2 28 6t26 12q26-65 83-103.5T583-480q90 0 153.5 61.5T800-268v28H120Zm334-80h252q-17-36-50-58t-73-22q-42 0-77 21t-52 59ZM320-750h80v-30h-80v30Zm0 90h80v-30h-80v30Zm-100-90h40v-30h-40v30Zm0 90h40v-30h-40v30Zm0 314q10-5 19.5-7.5T260-358v-242h-40v254Zm360 26Z"
+                />
+              </svg>
+              <p class="text-xs font-normal">Dinner Dining</p>
+            </div>
+            <div
+              class="group flex flex-col items-center text-gray-400 gap-2 transition-all hover:text-black hover:border-b-2 hover:border-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 -960 960 960"
+                class="fill-current"
+              >
+                <path
+                  d="M160-200q-33 0-56.5-23.5T80-280v-400q0-33 23.5-56.5T160-760h640q33 0 56.5 23.5T880-680v400q0 33-23.5 56.5T800-200H160Zm400-320h240v-160H560v160ZM160-280h320v-400H160v400Zm160-140q-25 0-42.5-17.5T260-480q0-25 17.5-42.5T320-540q25 0 42.5 17.5T380-480q0 25-17.5 42.5T320-420Zm240 140h240v-160H560v160Z"
+                />
+              </svg>
+              <p class="text-xs font-normal">Bento Food</p>
+            </div>
+            <div
+              class="group flex flex-col items-center text-gray-400 gap-2 transition-all hover:text-black hover:border-b-2 hover:border-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 -960 960 960"
+                class="fill-current"
+              >
+                <path
+                  d="M640-80q-67 0-101.5-22.5T480-150q-19-20-36.5-35T399-200q-45 0-100-15.5t-103.5-51Q147-302 114-359T80-499q-2-167 82.5-274T399-880q71 0 120 20.5t84.5 51.5q35.5 31 60 68.5T710-667q12 20 24 36.5t26 30.5q60 60 90 105t30 136q0 120-74.5 199.5T640-80Zm0-80q57 0 108.5-56.5T800-359q0-66-19.5-97T704-544q-21-20-37.5-44.5T633-639q-41-65-87-113t-147-48q-129 0-185 92.5T160-500q1 67 29 110t66.5 67.5Q294-298 334-289t65 9q51 0 82 24.5t51 45.5q22 23 42.5 36.5T640-160ZM480-340q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Zm-1-140Z"
+                />
+              </svg>
+              <p class="text-xs font-normal">Egg Based</p>
+            </div>
+            <div
+              class="group flex flex-col items-center text-gray-400 gap-2 transition-all hover:text-black hover:border-b-2 hover:border-red-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 -960 960 960"
+                class="fill-current"
+              >
+                <path
+                  d="M160-120v-80h640v80H160Zm160-160q-66 0-113-47t-47-113v-400h640q33 0 56.5 23.5T880-760v120q0 33-23.5 56.5T800-560h-80v120q0 66-47 113t-113 47H320Zm0-480h320-400 80Zm400 120h80v-120h-80v120ZM560-360q33 0 56.5-23.5T640-440v-320H400v16l72 58q2 2 8 16v170q0 8-6 14t-14 6H300q-8 0-14-6t-6-14v-170q0-2 8-16l72-58v-16H240v320q0 33 23.5 56.5T320-360h240ZM360-760h40-40Z"
+                />
+              </svg>
+              <p class="text-xs font-normal">Beverage Drink</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined pl-4">arrow_circle_right</span>
+          <div
+            class="flex justify-around items-center rounded-xl shadow-md h-12 w-24 border"
+          >
+            <span class="material-symbols-outlined pl-2">sync_alt</span>
+            <p class="text-xs font-medium pr-2">Filters</p>
+          </div>
+        </div>
+
+        <!-- Price bar -->
+        <section class="flex justify-center w-screen mt-52">
+          <div
+            class="flex items-center justify-between rounded-xl p-4 border w-[600px] h-16 focus-within:outline-gray-900 focus-within:border"
+          >
+            <div class="w-[460px] flex justify-start">
+              <p class="border-r-2 border-gray-300 pr-4 text-base font-medium">
+                Find by Name
+              </p>
+              <input
+                type="text"
+                class="w-[21em] border-gray-100 text-base text-gray-400 pl-4 active focus:outline-none"
+                placeholder="type food name ..."
+              />
+            </div>
+            <i
+              class="fa-solid fa-magnifying-glass bg-red-500 text-white rounded-full p-2"
+            ></i>
+          </div>
+        </section>
+
+        <!-- Cuisines -->
+        <div class="mt-10">
+          <div class="grid grid-cols-4 gap-y-4 w-full gap-x-10">
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_1.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Spaghetti Carbonara</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_2.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Chicken Tikka Masala</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_3.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_4.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_5.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_6.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_7.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_8.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_9.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_10.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_11.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+
+            <div class="flex flex-col h-96 w-72 transition-all">
+              <img
+                src="assets/food_12.jpg"
+                class="rounded-xl w-72 h-64 object-cover"
+              />
+              <div class="flex justify-between mt-2">
+                <p class="text-sm font-medium">Lonavla, India</p>
+                <div class="flex">
+                  <i class="fa-solid fa-star"></i>
+                  <p class="text-sm font-light">5.0</p>
+                </div>
+              </div>
+              <p class="text-sm text-gray-400">63 kilometers away</p>
+              <p class="text-sm text-gray-400">22-27 Jul</p>
+              <p class="text-sm font-medium mt-2">Rp11,000 food</p>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Pagination -->
+        <div
+          class="items-center space-y-2 text-sm sm:space-y-0 sm:space-x-3 sm:flex mb-20"
+        >
+          <span class="block">Page 1 of 4</span>
+          <div class="space-x-1">
+            <button
+              title="previous"
+              type="button"
+              class="flex-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow hover:bg-gray-700 stroke-gray-900 hover:stroke-white hover:scale-105 transition-all"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-4"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button
+              title="next"
+              type="button"
+              class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow hover:bg-gray-700 stroke-gray-900 hover:stroke-white hover:scale-105 transition-all"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-4"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer
+          class="h-12 fixed bottom-0 w-screen bg-gray-100 flex justify-between items-center px-10"
+        >
+          <div class="flex space-x-2 text-sm font-base">
+            <p>© 2023 Table Time, Inc.</p>
+            <p>·</p>
+            <p>Privacy</p>
+            <p>·</p>
+            <p>Terms</p>
+            <p>·</p>
+            <p>Developer Site</p>
+            <p>·</p>
+            <p>Company details</p>
+          </div>
+          <div class="flex space-x-4 text-sm font-medium">
+            <span class="material-symbols-outlined">language</span>
+            <p>English(EN)</p>
+            <p>Rp IDR</p>
+            <p>Support & resources</p>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Public Detail -->
+    <section id="public-detail" style="display: none">
+      <div class="h-full w-full flex flex-col items-center justify-center">
+        <!-- Navbar -->
+        <div
+          class="w-screen grid grid-cols-3 h-20 border-b-[1px] items-center fixed top-0 bg-white px-14"
+        >
+          <div class="pl-15">
+            <img src="assets/tabletime_logo.png" class="h-10 object-contain" />
+          </div>
+
+          <div class="px-4">
+            <div
+              class="flex items-center justify-evenly rounded-full shadow-md h-12 w-[420px] border"
+            >
+              <button
+                class="border-r-2 border-gray-100 px-4 text-sm font-medium"
+              >
+                Best Food
+              </button>
+              <button
+                class="border-r-2 border-gray-100 px-4 text-sm font-medium"
+              >
+                Chef Recomendation
+              </button>
+              <button class="border-gray-100 px-4 text-sm text-gray-400">
+                Our Location
+              </button>
+            </div>
+          </div>
+
+          <div class="flex justify-end items-center pr-15 gap-8">
+            <p class="text-sm font-medium">Table Time Your Food</p>
+            <span class="material-symbols-outlined">language</span>
+            <div
+              class="flex justify-evenly items-center py-1.25 pr-1.25 pl-3 gap-2 rounded-full shadow-md h-10 w-20 border"
+            >
+              <i class="fa-solid fa-bars"></i>
+              <p
+                class="bg-black text-white rounded-full w-7 h-7 text-center pt-1.5 text-[10px] font-semibold"
+              >
+                E
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Detail -->
+      <div class="mt-28">
+        <div class="flex flex-col w-full justify-center items-center">
+          <!-- <div class="flex flex-col mb-6 gap-y-2">
+            <p class="text-3xl font-bold">Spaghetti Carbonara</p>
+            <div class="flex flex-row gap-x-2">
+              <p class="text-sm font-normal">Luxurious 4BR Private Pool Near Pondok Indah Mall</p>
+              <i class="fa-solid fa-star"></i>
+              <p class="text-sm font-bold">Bandung, Jawa Barat</p>
+              
+            </div>
+          </div> -->
+
+          <!-- Gallery -->
+          <div class="flex flex-col h-[434px] w-[1120px] transition-all mb-8">
+            <div class="flex flex-row row-span-2 gap-x-2">
+              <img
+                src="assets/food_1.jpg"
+                class="rounded-xl w-[620px] h-[432px] object-cover"
+              />
+              <div class="flex flex-row gap-x-2">
+                <div class="flex flex-col gap-y-2">
+                  <img
+                    src="assets/food_2.jpg"
+                    class="rounded-xl w-[310px] h-[211.5px] object-cover"
+                  />
+                  <img
+                    src="assets/food_3.jpg"
+                    class="rounded-xl w-[310px] h-[211.5px] object-cover"
+                  />
+                </div>
+                <div class="flex flex-col gap-y-2">
+                  <img
+                    src="assets/food_4.jpg"
+                    class="rounded-xl w-[310px] h-[211.5px] object-cover"
+                  />
+                  <img
+                    src="assets/food_5.jpg"
+                    class="rounded-xl w-[310px] h-[211.5px] object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component -->
+          <div class="grid grid-cols-2 justify-between w-[1120px] h-[1000px]">
+            <!-- Left Component -->
+            <div class="flex flex-col bg-white gap-y-2 text-black">
+              <div class="max-w-2xl mx-auto space-y-12">
+                <article class="space-y-2 text-gray-900">
+                  <div class="space-y-6">
+                    <h1 class="text-4xl font-bold md:tracki md:text-5xl">
+                      Suspendisse ut magna et ipsum sodales accumsan.
+                    </h1>
+                    <div
+                      class="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400"
+                    >
+                      <div class="flex items-center md:space-x-2">
+                        <p class="text-sm">Leroy Jenkins • July 19th, 2021</p>
+                      </div>
+                      <p class="flex-shrink-0 mt-3 text-sm md:mt-0">
+                        4 min read • 1,570 views
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <div>
+                  <div
+                    class="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-400 -mt-8"
+                  >
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="px-3 py-1 rounded-sm hover:underline bg-red-500 text-white"
+                      >#MambaUI</a
+                    >
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="px-3 py-1 rounded-sm hover:underline bg-red-500 text-white"
+                      >#TailwindCSS</a
+                    >
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="px-3 py-1 rounded-sm hover:underline bg-red-500 text-white"
+                      >#Angular</a
+                    >
+                  </div>
+                  <div class="space-y-2 mb-8">
+                    <h4 class="text-lg font-semibold">Related posts</h4>
+                    <ul class="ml-4 space-y-1 list-disc">
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          href="#"
+                          class="hover:underline"
+                          >Nunc id magna mollis</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          href="#"
+                          class="hover:underline"
+                          >Duis molestie, neque eget pretium lobortis</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          href="#"
+                          class="hover:underline"
+                          >Mauris nec urna volutpat, aliquam lectus sit amet</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="gap-y-4">
+                    <p>
+                      It is a long established fact that a reader will be
+                      distracted by the readable content of a page when looking
+                      at its layout. The point of using Lorem Ipsum is that it
+                      has a more-or-less normal distribution of letters,
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Component -->
+            <div class="flex flex-col items-end">
+              <div
+                class="flex flex-col w-3/4 p-6 space-y-4 divide-y divide-gray-700 bg-white border text-gray-900 sticky top-28 rounded-md shadow-xl"
+              >
+                <h2 class="text-2xl font-semibold">Order items</h2>
+                <ul class="flex flex-col pt-4 space-y-2">
+                  <li class="flex items-start justify-between">
+                    <h3>
+                      Hard taco, chicken
+                      <span class="text-sm dark:text-red-500">x3</span>
+                    </h3>
+                    <div class="text-right">
+                      <span class="block">$7.50</span>
+                      <span class="text-sm dark:text-gray-400">à $2.50</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start justify-between">
+                    <h3>
+                      Hard taco, beef
+                      <span class="text-sm dark:text-red-500">x3</span>
+                    </h3>
+                    <div class="text-right">
+                      <span class="block">$8.25</span>
+                      <span class="text-sm dark:text-gray-400">à $2.75</span>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="pt-4 space-y-2">
+                  <div class="flex justify-between">
+                    <span>Service fee</span>
+                    <span>$0.50</span>
+                  </div>
+                  <div class="flex flex-col">
+                    <div class="flex justify-between">
+                      <span>Delivery fee</span>
+                      <span>$4.00</span>
+                    </div>
+                    <a
+                      rel="noopener noreferrer"
+                      href="#"
+                      class="text-xs hover:underline dark:text-red-500"
+                      >How do our fees work?</a
+                    >
+                  </div>
+                  <div class="space-y-6">
+                    <div class="flex justify-between">
+                      <span>Total</span>
+                      <span class="font-semibold">$22.70</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="block w-full p-3 text-center rounded-md bg-red-500 text-white font-bold hover:bg-orange-500 transition-all hover:scale-105 active:scale-90 hover:text-gray-100"
+                    >
+                      Go to checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navbar -->
+    <div class="h-full w-full flex flex-col items-center" style="display: none">
+      <div
+        class="w-screen grid grid-cols-3 h-20 border-b-[1px] items-center fixed top-0 bg-white px-14"
+      >
+        <div class="pl-15">
+          <img src="assets/tabletime_logo.png" class="h-10 object-contain" />
+        </div>
+
+        <div class="px-4">
+          <div
+            class="flex items-center justify-evenly rounded-full shadow-md h-12 w-[450px] border -ml-8"
+          >
+            <button
+              class="border-r-2 border-gray-100 px-4 text-sm font-medium hover:text-red-500 hover:font-bold transition-all hover:scale-110"
+            >
+              Cuisine
+            </button>
+            <button
+              class="border-r-2 border-gray-100 px-4 text-sm font-medium hover:text-red-500 hover:font-bold transition-all hover:scale-110"
+            >
+              Category
+            </button>
+            <button
+              class="border-r-2 border-gray-100 px-4 text-sm hover:text-red-500 hover:font-bold transition-all hover:scale-110"
+            >
+              New Staff
+            </button>
+            <button
+              class="border-gray-100 px-4 text-sm hover:text-red-500 hover:font-bold transition-all hover:scale-110"
+            >
+              Add Cuisine
+            </button>
+          </div>
+        </div>
+
+        <div class="flex justify-end items-center pr-15 gap-8">
+          <div
+            class="flex justify-end items-center py-1.25 pr-2 pl-3 gap-2 rounded-full shadow-md h-10 w-60 border"
+          >
+            <p class="text-xs text-gray-400 mr-[8px]">
+              adnannugroho19@gmail.com
+            </p>
+            <p
+              class="bg-red-500 text-white rounded-full w-7 h-7 text-center pt-1.5 text-[10px] font-semibold"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

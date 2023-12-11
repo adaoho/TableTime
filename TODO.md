@@ -1,236 +1,125 @@
-# P2-Challenge-1 (Server Side)
+# P2-Challenge-2 (Client Side)
 
 - Tema Aplikasi: ...
 
 Struktur Folder:
 
 - server (PORT: 3000)
+- client-public
+- client-cms
 
-## **W1D1**
-
-Target:
-
-### **REST API**
-
-- [ ] Membuat entitas utama (Create / POST)
-  - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas utama sesuai [tema aplikasi](https://docs.google.com/document/d/1GZwh8OJGZZQVUuWE0Cr13iMA2lLNE9mMoHfrbmETEBs/edit#heading=h.mcqrsbt2auhv).
-  - [ ] Jika request  berhasil, kembalikan response dengan 201 status code dan response body berupa object yang berisikan data baru yang berhasil di-input.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
-
-- [ ] Mengambil semua data entitas utama (Read / GET)
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama include User sebagai pemilik data (tanpa menampilkan passwordnya).
-  - [ ] Jika request gagal, kembalikan response dengan 500 status code.
-
-- [ ]  Mengambil detail entitas utama berdasar id (Read / GET)
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data todo.
-  - [ ] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
-
-- [ ] Mengupdate entitas utama (Update/ PUT)
-  - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas utama.
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data yang diupdate.
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
-
-- [ ] Menghapus entitas utama (Delete / DELETE)
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response berupa object yang berisikan data yang berhasil di-delete atau bisa juga mengembalikan data message saja message: '[entity name] success to delete'
-  - [ ] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
-
-- [ ] Membuat entitas kedua genres/categories/types (Create / POST)
-  - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas kedua sesuai [tema aplikasi](https://docs.google.com/document/d/1GZwh8OJGZZQVUuWE0Cr13iMA2lLNE9mMoHfrbmETEBs/edit#heading=h.mcqrsbt2auhv).
-  - [ ] Jika request  berhasil, kembalikan response dengan 201 status code dan response body berupa object yang berisikan data baru yang berhasil di-input.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
-
-- [ ] Mengambil semua data genres/categories/types (Read / GET)
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data genres/categories/types.
-  - [ ] Jika request gagal, kembalikan response dengan 500 status code.
-
-- [ ] Mengupdate kedua genres/categories/types (Update/ PUT)
-  - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas kedua genres/categories/types.
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data yang diupdate.
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
-
-- [ ] Menghapus entitas kedua genres/categories/types (Delete / DELETE)
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response berupa object yang berisikan data yang berhasil di-delete atau bisa juga mengembalikan data message saja message: '[entity name] success to delete'
-  - [ ] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
-
-- [ ] Mengambil semua data entitas utama (Read / GET) untuk public site
-  - [ ] Tambahkan prefix /pub pada endpoint ini
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama.
-  - [ ] Jika request gagal, kembalikan response dengan 500 status code.
-
-- [ ] Mengambil detail entitas utama berdasar id (Read / GET) untuk public site
-  - [ ] Tambahkan prefix /pub pada endpoint kalian
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data.
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
-
-### **API Documentation**
-
-- [ ] Route /path yang digunakan di aplikasi yang kamu buat
-- [ ] Informasi yang diperlukan oleh user saat ingin menggunakan route/path API (seperti body, header, parameter, dll)
-- [ ] Response serta status code yang akan didapatkan oleh pengguna (info, error, warning, dsb)
-
-Lebih lanjut untuk contoh, bisa dilihat di:
-
-- [Example API Documentation](https://gist.github.com/ziterz/56d2cd8b2d5f5d52101265c0182c2aff)
-
-## **W1D2**
+## **W2D1**
 
 Target:
 
-### **Authentication + Authorization**
+### **Web Layouting**
 
-- [ ] POST /add-user (khusus untuk staff, dilakukan oleh admin)
-  - [ ] Request Headers: { Authorization: "Bearer [your access token]" }
-  - [ ] Request body: { email, password }
-  - [ ] Response:
-    - [ ] 201: { id, email }
-    - [ ] 400: { errors }
+Buatlah web layouting menggunakan HTML dan CSS (boleh menggunakan CSS framework) untuk aplikasi client kamu meliputi halaman:
 
-  Note: Pastikan password telah terhash sebelum data user masuk ke dalam database.
+- [ ] **Public site**
+  - [ ] Halaman Home/Landing Page
+    - Halaman yang berfungsi untuk menampilkan data Entitas Utama berbentuk Card, tambahkan input search/filter dan pagination pada halaman ini, buatlah halaman ini dengan layout yang rapi dan semenarik mungkin.
+  - [ ] Halaman Detail
+    - Buatlah Halaman yang berisi detail dari Entitas Utama.
 
-- [ ] POST /login (semua role, baik admin atau staff)
-  - [ ] Request body: { email, password }
-  - [ ] Response:
-    - [ ] 200: { access_token, email/username, role }
-    - [ ] 401: { error invalid username or email or password }
+- [ ] **CMS site**
+  - [ ] Halaman Login
+    Pada halaman ini buatlah sebuah form untuk menampung input email dan password user yang digunakan untuk masuk ke CMS
+  - [ ] Halaman list entitas utama . Tampilkan data entity dalam bentuk Tabel .
+  - [ ] Navbar / Sidebar yang berfungsi sebagai navigasi halaman.
+  - [ ] Halaman create entitas utama
+    - Buatlah form yang berfungsi sebagai penampung input data entitas utama yang akan dibuat, sesuaikanlah input dengan dengan tipe yang sesuai. Untuk imgUrl buatlah input bertipe text saja.
+  - [ ] Halaman edit entitas utama
+    - Buatlah form yang sama persis seperti pada halaman create dengan Judul halaman/form yang berbeda.
+  - [ ] Halaman upload image entitas utama
+    - Buatlah sebuah halaman yang menampilkan nama/title entitas utama + gambar (yang akan diubah), beserta sebuah input berupa select File untuk property imgUrl.
+  - [ ] Halaman list untuk entitas kedua. Tampilkan data entity dalam bentuk Tabel .
+  - [ ] Halaman register staff
+    - Pada halaman ini buatlah sebuah form untuk menampung input semua data user yang akan didaftarkan oleh admin.
 
-- [ ] Menambahkan Authentication dan Authorization
-
-| Role  | Create | Read  | Update                             | Delete                             |
-| ----- | ------ | ----- | ---------------------------------- | ---------------------------------- |
-| Admin | [ ] ✅  | [ ] ✅ | [ ] ✅                              | [ ] ✅                              |
-| Staff | [ ]  ✅ | [ ] ✅ | [ ] Hanya bisa menghapus miliknya. | [ ] Hanya bisa menghapus miliknya. |
-
-- [ ] Error status code 401, apabila user yang belum login, atau yang mempunyai token yang salah mencoba mengakses endpoint CRD.
-- [ ] Error status code 403, apabila staff mengakses delete pada entitas yang bukan miliknya.
-
-  Note: Untuk mengirim access_token, gunakan request header (diterima sebagai req.headers di Express).
-
-### **Error Handler**
-
-- [ ] 401 - Error login user not found atau password not matched
-- [ ] 401 - Error authentication
-- [ ] 403 - Forbidden error di authorization
-- [ ] 400 - Error validation saat create.
-- [ ] 404 - Data not found.
-- [ ] 500 - Internal error server, dsb
-
-### **Upload File**
-
-- [ ] Meng-update data imgUrl entitas utama (Update / PATCH)
-  - [ ] Endpoint ini akan menerima request body berupa ("multipart/form-data") untuk meng-update data imgUrl.
-  - [ ] Id dikirimkan via request params.
-  - [ ] Membuat fitur upload menggunakan [multer](https://www.npmjs.com/package/multer) dan [imageKit](https://imagekit.io/)/[Cloudinary](https://cloudinary.com) untuk menyimpan file tersebut.
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object message: 'Image [entity name] success to update'
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan status code 404 dan response body berupa object yang berisikan error not found.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan status code 400 dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan status code 500.
-
-## **W1D3**
+## **W2D2**
 
 Target:
 
-### **TDD**
+### **Client Server Communication**
 
-Mengimplementasikan testing terhadap endpoint yang sudah dibuat
+Mencoba client server communication menggunakan HTTP Client seperti axios.
 
-- [ ] Login (Admin), perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Email tidak diberikan / tidak diinput
-  - [ ] Password tidak diberikan / tidak diinput
-  - [ ] Email diberikan invalid / tidak terdaftar
-  - [ ] Password diberikan salah / tidak match
-  - Pastikan untuk testing ini sediakan dulu data Admin
+- [ ]  Public site: Halaman Home
+Lakukan GET data entitas utama (include: pagination, filter dan sort) pada halaman ini, tampilkan data sesuai dengan database server kalian.
+- [ ]  CMS site: Halaman Login
+Lakukan POST pada pada halaman ini, Jika proses login berhasil, simpan token di localStorage
+- [ ]  CMS site: Halaman Create
+Lakukan POST pada halaman create entitas utama, coba kalian buat data baru dan pastikan bahwa hanya User yang Valid yang bisa membuat data baru
+- [ ]  Halaman lainnya
+Lengkapi semua proses komunikasi Client Server pada aplikasi kalian
 
-- [ ] Add Staff, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil register
-  - [ ] Email tidak diberikan / tidak diinput
-  - [ ] Password tidak diberikan / tidak diinput
-  - [ ] Email diberikan string kosong
-  - [ ] Password diberikan string kosong
-  - [ ] Email sudah terdaftar
-  - [ ] Format Email salah / invalid
-  - [ ] Gagal register staff karena admin belum login
-  - [ ] Gagal register staff karena token yang diberikan tidak valid (random string)
+## **W2D3**
 
-- [ ] Create, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil membuat entitas utama
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid  
-  - [ ] Gagal ketika request body tidak sesuai (validation required)
-  - Buatlah testing untuk masing-masing fitur
+Target:
 
-- [ ] Read, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan data Entitas Utama
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
+### **Generate React Project dengan build tools**
 
-- [ ] Read Detail, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
-  - [ ] Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
+Convert layout atau slicing template yang sudah dibuat ke dalam React.js :
 
-- [ ] Update PUT, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mengupdate data Entitas Utama berdasarkan params id yang diberikan
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
-  - [ ] Gagal karena id entity yang dikirim tidak terdapat di database
-  - [ ] Gagal menjalankan fitur ketika Staff mengolah data entity yang bukan miliknya
-  - [ ] Gagal ketika request body yang diberikan tidak sesuai
+- [ ] Coba buat React pada project hasil generate Vite
+- [ ] Public site
+  - [ ] Halaman Home/Landing Page
+  - [ ] Halaman Detail (Public)
 
-- [ ] Delete, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil menghapus data Entitas Utama berdasarkan params id yang diberikan
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
-  - [ ] Gagal karena id entity yang dikirim tidak terdapat di database
-  - [ ] Gagal menjalankan fitur ketika Staff menghapus entity yang bukan miliknya
+- [ ] CMS site
+  - [ ] Halaman Login
+  - [ ] Halaman list entitas utama
+  - [ ] Halaman create entitas utama
+  - [ ] Halaman edit entitas utama
+  - [ ] Halaman upload image entitas utama
+  - [ ] Halaman list untuk entitas kedua
+  - [ ] Halaman register staff
 
-- [ ] Update PATCH, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mengupdate imgUrl Entitas Utama berdasarkan params id yang diberikan
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
-  - [ ] Gaga menjalankan fiturl karena id entity yang dikirim tidak terdapat di database
-  - [ ] Gagal menjalankan fitur ketika Staff mengolah data entity yang bukan miliknya
-  - [ ] Gagal ketika request body yang diberikan tidak sesuai
+## **W2D4**
 
-- [ ] Read  Entitas kedua data genres/categories/types  perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan data entitas kedua
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
+Target:
 
-- [ ] Endpoint  List pada public site,  perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan Entitas Utama tanpa menggunakan query filter parameter
-  - [ ] Berhasil mendapatkan Entitas Utama dengan 1 query filter parameter
-  - [ ] Berhasil mendapatkan  Entitas Utama serta panjang yang sesuai ketika memberikan page tertentu (cek pagination-nya)
-  - Pastikan untuk testing ini sediakan dulu sekitar 20 data untuk diinput di beforeAll, sehingga kita bisa melakukan ekspektasi pada data dan jumlahnya yang kita dapat ketika filter dan pagination
+### React Lifecycle
 
-- [ ] Endpoint  Detail pada public site,  perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
-  - [ ] Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
+Integrasikan Halaman Web dengan server yang sudah kalian buat pada Challenge/Project 1. Jangan lupa untuk tampilkan pesan error dari server jika terjadi error di halaman web kalian. Untuk menampilkan pesan error / success bisa menggunakan package seperti SweetAlert dll.
 
-### **Sorting and Pagination, Filter**
+Pastikan setiap pergantian tampilan terjadi secara reaktif dengan tidak me-refresh web browser mu. Pasca login berhasil, user akan dinavigasikan ke tampilan home/list.
 
-Mengimplementasikan sorting, pagination dan filter pada aplikasi server yang sudah dibuat
+- [ ] Public site
+  - [ ] GET data entitas utama pada halaman Home/Landing Page (include: pagination, filter dan sort)
+  - [ ] GET data detail entitas utama pada halaman Detail
 
-- [ ] Get list entitas utama pada Public Site
-  - [ ] Search menggunakan title/name Entitas Utama
-  - [ ] Sorting berdasarkan data terbaru/terlama (ASC/DESC)
-  - [ ] Filter Entitas Utama berdasarkan Entitas Kedua (genres/categories/types)
-  - [ ] Pagination dengan limit data per page berjumlah 10
+- [ ] CMS site
+  - [ ] POST pada halaman Login
+  - [ ] GET data entitas utama pada halaman list entitas utama (include: pagination, filter dan sort)
+  - [ ] POST pada halaman create entitas utama
+  - [ ] PUT pada halaman edit entitas utama
+  - [ ] DELETE untuk menghapus entitas utama
+  - [ ] PATCH untuk mengupload image / mengupdate imgUrl entitas utama
+  - [ ] GET data entitas kedua pada Halaman list entitas kedua
+  - [ ] POST pada Halaman register staff
 
-## **W1D4 & W1D6**
+### React Router
 
-Target: Melakukan deployment menggunakan AWS EC2/GCP/Cloud Deployment lainnya untuk server yang telah dibuat
+Silahkan Implementasikan routing pada aplikasi client kalian.
+
+- [ ] Public site
+  - [ ] Halaman Home/Landing Page
+  - [ ] Halaman Detail
+- [ ] CMS site
+  - [ ] Halaman Login
+  - [ ] Halaman list entitas utama
+  - [ ] Halaman create entitas utama (boleh menggunakan modal)
+  - [ ] Halaman edit entitas utama (boleh menggunakan modal)
+  - [ ] Halaman upload image untuk entitas utama (boleh menggunakan modal)
+  - [ ] Halaman list untuk entitas kedua
+  - [ ] Halaman register staff
+
+## **W2D5**
+
+Target:
+
+Coba lakukan deployment untuk client (bisa coba deploy hal sederhana terlebih dahulu seperti halaman yang menampilkan ‘hello world’) menggunakan Firebase/Vercel.
+
+- [ ] Deploy client
